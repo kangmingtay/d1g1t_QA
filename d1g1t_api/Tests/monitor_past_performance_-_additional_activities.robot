@@ -4,6 +4,7 @@ Documentation  Testing API calls in Monitor page.
 
 Resource  ../Resources/MonitorOverview/initial_api.robot
 Resource  ../Resources/MonitorPastPerformance/trend_analysis_api.robot
+Resource  ../Resources/MonitorPastPerformance/performance_analysis_api.robot
 
 Suite Teardown  Delete All Sessions
 
@@ -119,6 +120,95 @@ Check Trend analysis for Realized Volatility
     Total Portfolio - Realized Volatility: Trend (Since Inception)
 
 
+# APi calls for Performance analysis chart:
+
+Check Performance for Household Name
+
+    [Documentation]  Checking Household Name API calls for performance analysis
+    [Tags]  past_performance    performance_analysis
+
+    Household Name - Performance Range
+
+Check Performance for Client Name
+
+    [Documentation]  Checking Client Name API calls for performance analysis
+    [Tags]  past_performance    performance_analysis
+
+    Client Name - Performance Range
+
+Check Performance for Security Asset Class
+
+    [Documentation]  Checking Security Asset Class API calls for performance analysis
+    [Tags]  past_performance    performance_analysis
+
+    Security Asset Class - Performance Range
+
+Check Performance for Security Name
+
+    [Documentation]  Checking Security Name API calls for performance analysis
+    [Tags]  past_performance    performance_analysis
+
+    Security Name - Performance Range
+
+Check Performance for Security Strategy
+
+    [Documentation]  Checking Security Strategy API calls for performance analysis
+    [Tags]  past_performance    performance_analysis
+
+    Security Strategy - Performance Range
+
+Check Performance for Household
+
+    [Documentation]  Checking Household API calls for performance analysis
+    [Tags]  past_performance    performance_analysis
+
+    Household - Global Settings
+
+    Household - Top Performers
+    Household - Top Performers (3 Years)
+    Household - Top Performers (5 Years)
+    Household - Top Performers (Year-to-Date)
+    Household - Top Performers (Since Inception)
+
+    Household - Bottom Performers
+    Household - Bottom Performers (3 Years)
+    Household - Bottom Performers (5 Years)
+    Household - Bottom Performers (Year-to-Date)
+    Household - Bottom Performers (Since Inception)
+
+Check Performance for Client
+
+    [Documentation]  Checking Client API calls for performance analysis
+    [Tags]  past_performance    performance_analysis
+
+    Client - Top Performers
+    Client - Top Performers (3 Years)
+    Client - Top Performers (5 Years)
+    Client - Top Performers (Year-to-Date)
+    Client - Top Performers (Since Inception)
+
+    Client - Bottom Performers
+    Client - Bottom Performers (3 Years)
+    Client - Bottom Performers (5 Years)
+    Client - Bottom Performers (Year-to-Date)
+    Client - Bottom Performers (Since Inception)
+
+Check Performance for Security
+
+    [Documentation]  Checking Security API calls for performance analysis
+    [Tags]  past_performance    performance_analysis
+
+    Security - Top Performers
+    Security - Top Performers (3 Years)
+    Security - Top Performers (5 Years)
+    Security - Top Performers (Year-to-Date)
+    Security - Top Performers (Since Inception)
+
+    Security - Bottom Performers
+    Security - Bottom Performers (3 Years)
+    Security - Bottom Performers (5 Years)
+    Security - Bottom Performers (Year-to-Date)
+    Security - Bottom Performers (Since Inception)
 
 
 

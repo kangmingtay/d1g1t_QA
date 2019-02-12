@@ -733,11 +733,9 @@ Asset Class: Quarterly Allocation - PF Activity (1 Year)
     Should Contain      ${response_body}                        Equity
 
 
-# Account type:
-
     # Net Deposits/Withdrawals
 
-Account type: Net Deposits/Withdrawals - Portfolio Management (1 Year)
+Asset Class: Net Deposits/Withdrawals - Portfolio Management (1 Year)
 
     [Documentation]     Checking portfolio management under "Account type" for "Net Deposits/Withdrawals"
 
@@ -755,7 +753,7 @@ Account type: Net Deposits/Withdrawals - Portfolio Management (1 Year)
     ${response_body} =  Set Variable  ${response.json()}
     Dictionary Should Contain Key  ${response_body}             summary_period
 
-Account type: Net Deposits/Withdrawals - PF Activity (1 Year)
+Asset Class: Net Deposits/Withdrawals - PF Activity (1 Year)
 
     [Documentation]     Checking pf activity under "Account type" for "Net Deposits/Withdrawals"
 
@@ -773,7 +771,7 @@ Account type: Net Deposits/Withdrawals - PF Activity (1 Year)
     ${response_body} =  Set Variable  ${response.text}
     Should Contain      ${response_body}                        Net Deposits
 
-Account type: Net Deposits/Withdrawals - Portfolio Management (1 Month)
+Asset Class: Net Deposits/Withdrawals - Portfolio Management (1 Month)
 
     [Documentation]     Checking 1 Month portfolio management under "Account type" for "Net Deposits/Withdrawals"
 
@@ -793,7 +791,7 @@ Account type: Net Deposits/Withdrawals - Portfolio Management (1 Month)
     ${response_body} =  Set Variable  ${response.json()}
     Dictionary Should Contain Key  ${response_body}             summary_period
 
-Account type: Net Deposits/Withdrawals - PF Activity (1 Month)
+Asset Class: Net Deposits/Withdrawals - PF Activity (1 Month)
 
     [Documentation]     Checking 1 Month pf activity under "Account type" for "Net Deposits/Withdrawals"
 
@@ -813,7 +811,7 @@ Account type: Net Deposits/Withdrawals - PF Activity (1 Month)
     ${response_body} =  Set Variable  ${response.text}
     Should Contain      ${response_body}                        Net Deposits
 
-Account type: Net Deposits/Withdrawals - Portfolio Management (3 Months)
+Asset Class: Net Deposits/Withdrawals - Portfolio Management (3 Months)
 
     [Documentation]     Checking 3 Months portfolio management under "Account type" for "Net Deposits/Withdrawals"
 
@@ -833,7 +831,7 @@ Account type: Net Deposits/Withdrawals - Portfolio Management (3 Months)
     ${response_body} =  Set Variable  ${response.json()}
     Dictionary Should Contain Key  ${response_body}             summary_period
 
-Account type: Net Deposits/Withdrawals - PF Activity (3 Months)
+Asset Class: Net Deposits/Withdrawals - PF Activity (3 Months)
 
     [Documentation]     Checking 3 Months pf activity under "Account type" for "Net Deposits/Withdrawals"
 
@@ -853,7 +851,7 @@ Account type: Net Deposits/Withdrawals - PF Activity (3 Months)
     ${response_body} =  Set Variable  ${response.text}
     Should Contain      ${response_body}                        Net Deposits
 
-Account type: Net Deposits/Withdrawals - Portfolio Management (6 Months)
+Asset Class: Net Deposits/Withdrawals - Portfolio Management (6 Months)
 
     [Documentation]     Checking 6 Months portfolio management under "Account type" for "Net Deposits/Withdrawals"
 
@@ -873,7 +871,7 @@ Account type: Net Deposits/Withdrawals - Portfolio Management (6 Months)
     ${response_body} =  Set Variable  ${response.json()}
     Dictionary Should Contain Key  ${response_body}             summary_period
 
-Account type: Net Deposits/Withdrawals - PF Activity (6 Months)
+Asset Class: Net Deposits/Withdrawals - PF Activity (6 Months)
 
     [Documentation]     Checking 6 Months pf activity under "Account type" for "Net Deposits/Withdrawals"
 
@@ -893,7 +891,7 @@ Account type: Net Deposits/Withdrawals - PF Activity (6 Months)
     ${response_body} =  Set Variable  ${response.text}
     Should Contain      ${response_body}                        Net Deposits
 
-Account type: Net Deposits/Withdrawals - Portfolio Management (Year-to-Date)
+Asset Class: Net Deposits/Withdrawals - Portfolio Management (Year-to-Date)
 
     [Documentation]     Checking Year-to-Date portfolio management under "Account type" for "Net Deposits/Withdrawals"
 
@@ -913,7 +911,7 @@ Account type: Net Deposits/Withdrawals - Portfolio Management (Year-to-Date)
     ${response_body} =  Set Variable  ${response.json()}
     Dictionary Should Contain Key  ${response_body}             summary_period
 
-Account type: Net Deposits/Withdrawals - PF Activity (Year-to-Date)
+Asset Class: Net Deposits/Withdrawals - PF Activity (Year-to-Date)
 
     [Documentation]     Checking Year-to-Date pf activity under "Account type" for "Net Deposits/Withdrawals"
 
@@ -933,7 +931,7 @@ Account type: Net Deposits/Withdrawals - PF Activity (Year-to-Date)
     ${response_body} =  Set Variable  ${response.text}
     Should Contain      ${response_body}                        Net Deposits
 
-Account type: Net Deposits/Withdrawals - Portfolio Management (3 Years)
+Asset Class: Net Deposits/Withdrawals - Portfolio Management (3 Years)
 
     [Documentation]     Checking 3 Years portfolio management under "Account type" for "Net Deposits/Withdrawals"
 
@@ -953,7 +951,7 @@ Account type: Net Deposits/Withdrawals - Portfolio Management (3 Years)
     ${response_body} =  Set Variable  ${response.json()}
     Dictionary Should Contain Key  ${response_body}             summary_period
 
-Account type: Net Deposits/Withdrawals - PF Activity (3 Years)
+Asset Class: Net Deposits/Withdrawals - PF Activity (3 Years)
 
     [Documentation]     Checking 3 Years pf activity under "Account type" for "Net Deposits/Withdrawals"
 
@@ -973,7 +971,7 @@ Account type: Net Deposits/Withdrawals - PF Activity (3 Years)
     ${response_body} =  Set Variable  ${response.text}
     Should Contain      ${response_body}                        Net Deposits
 
-Account type: Net Deposits/Withdrawals - Portfolio Management (5 Years)
+Asset Class: Net Deposits/Withdrawals - Portfolio Management (5 Years)
 
     [Documentation]     Checking 5 Years portfolio management under "Account type" for "Net Deposits/Withdrawals"
 
@@ -993,7 +991,7 @@ Account type: Net Deposits/Withdrawals - Portfolio Management (5 Years)
     ${response_body} =  Set Variable  ${response.json()}
     Dictionary Should Contain Key  ${response_body}             summary_period
 
-Account type: Net Deposits/Withdrawals - PF Activity (5 Years)
+Asset Class: Net Deposits/Withdrawals - PF Activity (5 Years)
 
     [Documentation]     Checking 5 Years pf activity under "Account type" for "Net Deposits/Withdrawals"
 
@@ -1013,7 +1011,7 @@ Account type: Net Deposits/Withdrawals - PF Activity (5 Years)
     ${response_body} =  Set Variable  ${response.text}
     Should Contain      ${response_body}                        Net Deposits
 
-Account type: Net Deposits/Withdrawals - Portfolio Management (Since Inception)
+Asset Class: Net Deposits/Withdrawals - Portfolio Management (Since Inception)
 
     [Documentation]     Checking portfolio management Since Inception under "Account type" for "Net Deposits/Withdrawals"
 
@@ -1033,7 +1031,7 @@ Account type: Net Deposits/Withdrawals - Portfolio Management (Since Inception)
     ${response_body} =  Set Variable  ${response.json()}
     Dictionary Should Contain Key  ${response_body}             summary_period
 
-Account type: Net Deposits/Withdrawals - PF Activity (Since Inception)
+Asset Class: Net Deposits/Withdrawals - PF Activity (Since Inception)
 
     [Documentation]     Checking pf activity Since Inception under "Account type" for "Net Deposits/Withdrawals"
 
@@ -1056,7 +1054,7 @@ Account type: Net Deposits/Withdrawals - PF Activity (Since Inception)
 
         # Quarterly Net Deposits/Withdrawals
 
-Account type: Quarterly Net Deposits/Withdrawals - Portfolio Management (1 Year)
+Asset Class: Quarterly Net Deposits/Withdrawals - Portfolio Management (1 Year)
 
     [Documentation]     Checking portfolio management under "Account type" for quarterly "Net Deposits/Withdrawals"
 
@@ -1075,7 +1073,7 @@ Account type: Quarterly Net Deposits/Withdrawals - Portfolio Management (1 Year)
     ${response_body} =  Set Variable  ${response.json()}
     Dictionary Should Contain Key  ${response_body}             summary_period
 
-Account type: Quarterly Net Deposits/Withdrawals - PF Activity (1 Year)
+Asset Class: Quarterly Net Deposits/Withdrawals - PF Activity (1 Year)
 
     [Documentation]     Checking pf activity under "Account type" for quarterly "Net Deposits/Withdrawals"
 
