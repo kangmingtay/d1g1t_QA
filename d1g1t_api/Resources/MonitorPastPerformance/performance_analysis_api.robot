@@ -25,7 +25,7 @@ Household Name - Performance Range
     ${response} =   Post Request    d1g1t_api   /api/v1/calc/performance-range/     data=${payload_performance_analysis}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -46,7 +46,7 @@ Client Name - Performance Range
     ${response} =   Post Request    d1g1t_api   /api/v1/calc/performance-range/     data=${payload_performance_analysis}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -67,7 +67,7 @@ Security Asset Class - Performance Range
     ${response} =   Post Request    d1g1t_api   /api/v1/calc/performance-range/     data=${payload_performance_analysis}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -88,7 +88,7 @@ Security Name - Performance Range
     ${response} =   Post Request    d1g1t_api   /api/v1/calc/performance-range/     data=${payload_performance_analysis}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -109,7 +109,7 @@ Security Strategy - Performance Range
     ${response} =   Post Request    d1g1t_api   /api/v1/calc/performance-range/     data=${payload_performance_analysis}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -128,7 +128,7 @@ Household - Global Settings
     ${response} =   Get Request    d1g1t_api   /api/v1/profile/global-settings/
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -146,7 +146,7 @@ Household - Top Performers
     ${response} =   Post Request    d1g1t_api   /api/v1/calc/top-bottom-performers/     data=${payload_top_performers}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -166,7 +166,7 @@ Household - Top Performers (3 Years)
     ${response} =   Post Request    d1g1t_api   /api/v1/calc/top-bottom-performers/     data=${payload_top_performers}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -186,7 +186,7 @@ Household - Top Performers (5 Years)
     ${response} =   Post Request    d1g1t_api   /api/v1/calc/top-bottom-performers/     data=${payload_top_performers}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -206,7 +206,7 @@ Household - Top Performers (Year-to-Date)
     ${response} =   Post Request    d1g1t_api   /api/v1/calc/top-bottom-performers/     data=${payload_top_performers}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -226,7 +226,7 @@ Household - Top Performers (Since Inception)
     ${response} =   Post Request    d1g1t_api   /api/v1/calc/top-bottom-performers/     data=${payload_top_performers}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -246,7 +246,7 @@ Household - Bottom Performers
     ${response} =   Post Request    d1g1t_api   /api/v1/calc/top-bottom-performers/     data=${payload_bottom_performers}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -266,7 +266,7 @@ Household - Bottom Performers (3 Years)
     ${response} =   Post Request    d1g1t_api   /api/v1/calc/top-bottom-performers/     data=${payload_bottom_performers}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -286,7 +286,7 @@ Household - Bottom Performers (5 Years)
     ${response} =   Post Request    d1g1t_api   /api/v1/calc/top-bottom-performers/     data=${payload_bottom_performers}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -306,7 +306,7 @@ Household - Bottom Performers (Year-to-Date)
     ${response} =   Post Request    d1g1t_api   /api/v1/calc/top-bottom-performers/     data=${payload_bottom_performers}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -326,7 +326,7 @@ Household - Bottom Performers (Since Inception)
     ${response} =   Post Request    d1g1t_api   /api/v1/calc/top-bottom-performers/     data=${payload_bottom_performers}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -349,7 +349,7 @@ Client - Top Performers
     ${response} =   Post Request    d1g1t_api   /api/v1/calc/top-bottom-performers/     data=${payload_top_performers}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -369,7 +369,7 @@ Client - Top Performers (3 Years)
     ${response} =   Post Request    d1g1t_api   /api/v1/calc/top-bottom-performers/     data=${payload_top_performers}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -389,7 +389,7 @@ Client - Top Performers (5 Years)
     ${response} =   Post Request    d1g1t_api   /api/v1/calc/top-bottom-performers/     data=${payload_top_performers}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -409,7 +409,7 @@ Client - Top Performers (Year-to-Date)
     ${response} =   Post Request    d1g1t_api   /api/v1/calc/top-bottom-performers/     data=${payload_top_performers}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -429,7 +429,7 @@ Client - Top Performers (Since Inception)
     ${response} =   Post Request    d1g1t_api   /api/v1/calc/top-bottom-performers/     data=${payload_top_performers}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -449,7 +449,7 @@ Client - Bottom Performers
     ${response} =   Post Request    d1g1t_api   /api/v1/calc/top-bottom-performers/     data=${payload_bottom_performers}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -469,7 +469,7 @@ Client - Bottom Performers (3 Years)
     ${response} =   Post Request    d1g1t_api   /api/v1/calc/top-bottom-performers/     data=${payload_bottom_performers}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -489,7 +489,7 @@ Client - Bottom Performers (5 Years)
     ${response} =   Post Request    d1g1t_api   /api/v1/calc/top-bottom-performers/     data=${payload_bottom_performers}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -509,7 +509,7 @@ Client - Bottom Performers (Year-to-Date)
     ${response} =   Post Request    d1g1t_api   /api/v1/calc/top-bottom-performers/     data=${payload_bottom_performers}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -529,7 +529,7 @@ Client - Bottom Performers (Since Inception)
     ${response} =   Post Request    d1g1t_api   /api/v1/calc/top-bottom-performers/     data=${payload_bottom_performers}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -552,7 +552,7 @@ Security - Top Performers
     ${response} =   Post Request    d1g1t_api   /api/v1/calc/top-bottom-performers/     data=${payload_top_performers}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -572,7 +572,7 @@ Security - Top Performers (3 Years)
     ${response} =   Post Request    d1g1t_api   /api/v1/calc/top-bottom-performers/     data=${payload_top_performers}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -592,7 +592,7 @@ Security - Top Performers (5 Years)
     ${response} =   Post Request    d1g1t_api   /api/v1/calc/top-bottom-performers/     data=${payload_top_performers}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -612,7 +612,7 @@ Security - Top Performers (Year-to-Date)
     ${response} =   Post Request    d1g1t_api   /api/v1/calc/top-bottom-performers/     data=${payload_top_performers}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -632,7 +632,7 @@ Security - Top Performers (Since Inception)
     ${response} =   Post Request    d1g1t_api   /api/v1/calc/top-bottom-performers/     data=${payload_top_performers}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -652,7 +652,7 @@ Security - Bottom Performers
     ${response} =   Post Request    d1g1t_api   /api/v1/calc/top-bottom-performers/     data=${payload_bottom_performers}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -672,7 +672,7 @@ Security - Bottom Performers (3 Years)
     ${response} =   Post Request    d1g1t_api   /api/v1/calc/top-bottom-performers/     data=${payload_bottom_performers}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -692,7 +692,7 @@ Security - Bottom Performers (5 Years)
     ${response} =   Post Request    d1g1t_api   /api/v1/calc/top-bottom-performers/     data=${payload_bottom_performers}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -712,7 +712,7 @@ Security - Bottom Performers (Year-to-Date)
     ${response} =   Post Request    d1g1t_api   /api/v1/calc/top-bottom-performers/     data=${payload_bottom_performers}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -732,7 +732,7 @@ Security - Bottom Performers (Since Inception)
     ${response} =   Post Request    d1g1t_api   /api/v1/calc/top-bottom-performers/     data=${payload_bottom_performers}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}

@@ -32,7 +32,7 @@ Date Filter: Today - Summary Calculations
     ${response} =   Post Request    d1g1t_api                   /api/v1/calc/summary/     data=${payload_summary}    headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -52,7 +52,7 @@ Date Filter: Today - Cumulative Return Calculations
     ${response} =   Post Request    d1g1t_api                   /api/v1/calc/summary/     data=${payload_cumulative_return}    headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -72,7 +72,7 @@ Date Filter: Today - PF Deposits Calculations
     ${response} =   Post Request    d1g1t_api                   /api/v1/calc/summary/     data=${payload_pf_deposits}    headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -92,7 +92,7 @@ Date Filter: Today - PF Activity Group 1 Calculations
     ${response} =   Post Request    d1g1t_api                   /api/v1/calc/summary/     data=${payload_pf_activity_group_1}    headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -116,7 +116,7 @@ Date Filter: Previous Business day - Summary Calculations
     ${response} =   Post Request    d1g1t_api                   /api/v1/calc/summary/     data=${payload_summary}    headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -136,7 +136,7 @@ Date Filter: Previous Business day - Cumulative Return Calculations
     ${response} =   Post Request    d1g1t_api                   /api/v1/calc/summary/     data=${payload_cumulative_return}    headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -156,7 +156,7 @@ Date Filter: Previous Business day - PF Deposits Calculations
     ${response} =   Post Request    d1g1t_api                   /api/v1/calc/summary/     data=${payload_pf_deposits}    headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -176,7 +176,7 @@ Date Filter: Previous Business day - PF Activity Group 1 Calculations
     ${response} =   Post Request    d1g1t_api                   /api/v1/calc/summary/     data=${payload_pf_activity_group_1}    headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -200,7 +200,7 @@ Date Filter: End of previous week - Summary Calculations
     ${response} =   Post Request    d1g1t_api                   /api/v1/calc/summary/     data=${payload_summary}    headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -220,7 +220,7 @@ Date Filter: End of previous week - Cumulative Return Calculations
     ${response} =   Post Request    d1g1t_api                   /api/v1/calc/summary/     data=${payload_cumulative_return}    headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -240,7 +240,7 @@ Date Filter: End of previous week - PF Deposits Calculations
     ${response} =   Post Request    d1g1t_api                   /api/v1/calc/summary/     data=${payload_pf_deposits}    headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -260,7 +260,7 @@ Date Filter: End of previous week - PF Activity Group 1 Calculations
     ${response} =   Post Request    d1g1t_api                   /api/v1/calc/summary/     data=${payload_pf_activity_group_1}    headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -284,7 +284,7 @@ Date Filter: End of previous month - Summary Calculations
     ${response} =   Post Request    d1g1t_api                   /api/v1/calc/summary/     data=${payload_summary}    headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -304,7 +304,7 @@ Date Filter: End of previous month - Cumulative Return Calculations
     ${response} =   Post Request    d1g1t_api                   /api/v1/calc/summary/     data=${payload_cumulative_return}    headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -324,7 +324,7 @@ Date Filter: End of previous month - PF Deposits Calculations
     ${response} =   Post Request    d1g1t_api                   /api/v1/calc/summary/     data=${payload_pf_deposits}    headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -344,7 +344,7 @@ Date Filter: End of previous month - PF Activity Group 1 Calculations
     ${response} =   Post Request    d1g1t_api                   /api/v1/calc/summary/     data=${payload_pf_activity_group_1}    headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -368,7 +368,7 @@ Date Filter: End of previous quarter - Summary Calculations
     ${response} =   Post Request    d1g1t_api                   /api/v1/calc/summary/     data=${payload_summary}    headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -388,7 +388,7 @@ Date Filter: End of previous quarter - Cumulative Return Calculations
     ${response} =   Post Request    d1g1t_api                   /api/v1/calc/summary/     data=${payload_cumulative_return}    headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -408,7 +408,7 @@ Date Filter: End of previous quarter - PF Deposits Calculations
     ${response} =   Post Request    d1g1t_api                   /api/v1/calc/summary/     data=${payload_pf_deposits}    headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -428,7 +428,7 @@ Date Filter: End of previous quarter - PF Activity Group 1 Calculations
     ${response} =   Post Request    d1g1t_api                   /api/v1/calc/summary/     data=${payload_pf_activity_group_1}    headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -452,7 +452,7 @@ Date Filter: End of previous year - Summary Calculations
     ${response} =   Post Request    d1g1t_api                   /api/v1/calc/summary/     data=${payload_summary}    headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -472,7 +472,7 @@ Date Filter: End of previous year - Cumulative Return Calculations
     ${response} =   Post Request    d1g1t_api                   /api/v1/calc/summary/     data=${payload_cumulative_return}    headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -492,7 +492,7 @@ Date Filter: End of previous year - PF Deposits Calculations
     ${response} =   Post Request    d1g1t_api                   /api/v1/calc/summary/     data=${payload_pf_deposits}    headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -512,7 +512,7 @@ Date Filter: End of previous year - PF Activity Group 1 Calculations
     ${response} =   Post Request    d1g1t_api                   /api/v1/calc/summary/     data=${payload_pf_activity_group_1}    headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}

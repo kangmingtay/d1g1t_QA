@@ -27,7 +27,7 @@ Total Portfolio - Assets Under Management: Trend Analysis Chart
     ${response} =   Put Request    d1g1t_api        /api/v1/profile/global-settings/CHART-TREND-ANALYSIS-MONITOR-OVERVIEW/      data=${payload_trend_analysis}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -44,7 +44,7 @@ Total Portfolio - Assets Under Management: Trend
     ${response} =   Post Request    d1g1t_api   /api/v1/calc/trend-aum/      data=${payload_trend}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -64,7 +64,7 @@ Total Portfolio - Cumulative Return: Trend Analysis Chart
     ${response} =   Put Request    d1g1t_api        /api/v1/profile/global-settings/CHART-TREND-ANALYSIS-MONITOR-OVERVIEW/      data=${payload_trend_analysis}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -81,7 +81,7 @@ Total Portfolio - Cumulative Return: Trend
     ${response} =   Post Request    d1g1t_api   /api/v1/calc/trend-cumul-ret/       data=${payload_trend}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -102,7 +102,7 @@ Total Portfolio - Cumulative Return (FXseparated): Trend Analysis Chart
     ${response} =   Put Request    d1g1t_api        /api/v1/profile/global-settings/CHART-TREND-ANALYSIS-MONITOR-OVERVIEW/      data=${payload_trend_analysis}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -120,7 +120,7 @@ Total Portfolio - Cumulative Return (FXseparated): Trend
     ${response} =   Post Request    d1g1t_api   /api/v1/calc/trend-cumul-ret/       data=${payload_trend}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -140,7 +140,7 @@ Total Portfolio - Return By Period (monthly): Trend Analysis Chart
     ${response} =   Put Request    d1g1t_api        /api/v1/profile/global-settings/CHART-TREND-ANALYSIS-MONITOR-OVERVIEW/      data=${payload_trend_analysis}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -157,7 +157,7 @@ Total Portfolio - Return By Period (monthly): Trend
     ${response} =   Post Request    d1g1t_api   /api/v1/calc/trend-ret-by-period/      data=${payload_trend}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -178,7 +178,7 @@ Total Portfolio - Return By Period (monthly - FXseparated): Trend Analysis Chart
     ${response} =   Put Request    d1g1t_api        /api/v1/profile/global-settings/CHART-TREND-ANALYSIS-MONITOR-OVERVIEW/      data=${payload_trend_analysis}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -196,7 +196,7 @@ Total Portfolio - Return By Period (monthly - FXseparated): Trend
     ${response} =   Post Request    d1g1t_api   /api/v1/calc/trend-ret-by-period/      data=${payload_trend}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -217,7 +217,7 @@ Total Portfolio - Return By Period (daily): Trend Analysis Chart
     ${response} =   Put Request    d1g1t_api        /api/v1/profile/global-settings/CHART-TREND-ANALYSIS-MONITOR-OVERVIEW/      data=${payload_trend_analysis}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -235,7 +235,7 @@ Total Portfolio - Return By Period (daily): Trend
     ${response} =   Post Request    d1g1t_api   /api/v1/calc/trend-ret-by-period/      data=${payload_trend}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -256,7 +256,7 @@ Total Portfolio - Return By Period (weekly): Trend Analysis Chart
     ${response} =   Put Request    d1g1t_api        /api/v1/profile/global-settings/CHART-TREND-ANALYSIS-MONITOR-OVERVIEW/      data=${payload_trend_analysis}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -274,7 +274,7 @@ Total Portfolio - Return By Period (weekly): Trend
     ${response} =   Post Request    d1g1t_api   /api/v1/calc/trend-ret-by-period/      data=${payload_trend}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -295,7 +295,7 @@ Total Portfolio - Return By Period (quarterly): Trend Analysis Chart
     ${response} =   Put Request    d1g1t_api        /api/v1/profile/global-settings/CHART-TREND-ANALYSIS-MONITOR-OVERVIEW/      data=${payload_trend_analysis}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -313,7 +313,7 @@ Total Portfolio - Return By Period (quarterly): Trend
     ${response} =   Post Request    d1g1t_api   /api/v1/calc/trend-ret-by-period/      data=${payload_trend}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -333,7 +333,7 @@ Total Portfolio - Realized Volatility: Trend Analysis Chart
     ${response} =   Put Request    d1g1t_api        /api/v1/profile/global-settings/CHART-TREND-ANALYSIS-MONITOR-OVERVIEW/      data=${payload_trend_analysis}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -350,7 +350,7 @@ Total Portfolio - Realized Volatility: Trend
     ${response} =   Post Request    d1g1t_api   /api/v1/calc/trend-realizd-volat/      data=${payload_trend}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -373,7 +373,7 @@ Asset Class - Assets Under Management: Trend Analysis Chart
     ${response} =   Put Request    d1g1t_api        /api/v1/profile/global-settings/CHART-TREND-ANALYSIS-MONITOR-OVERVIEW/      data=${payload_trend_analysis}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -390,7 +390,7 @@ Asset Class - Assets Under Management: Trend
     ${response} =   Post Request    d1g1t_api   /api/v1/calc/trend-aum/      data=${payload_trend}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -410,7 +410,7 @@ Asset Class - Allocation (monthly): Trend Analysis Chart
     ${response} =   Put Request    d1g1t_api        /api/v1/profile/global-settings/CHART-TREND-ANALYSIS-MONITOR-OVERVIEW/      data=${payload_trend_analysis}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -427,7 +427,7 @@ Asset Class - Allocation (monthly): Trend
     ${response} =   Post Request    d1g1t_api   /api/v1/calc/trend-alloc/      data=${payload_trend}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -448,7 +448,7 @@ Asset Class - Allocation (quarterly): Trend Analysis Chart
     ${response} =   Put Request    d1g1t_api        /api/v1/profile/global-settings/CHART-TREND-ANALYSIS-MONITOR-OVERVIEW/      data=${payload_trend_analysis}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -466,7 +466,7 @@ Asset Class - Allocation (quarterly): Trend
     ${response} =   Post Request    d1g1t_api   /api/v1/calc/trend-alloc/      data=${payload_trend}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -486,7 +486,7 @@ Asset Class - Cumulative Return: Trend Analysis Chart
     ${response} =   Put Request    d1g1t_api        /api/v1/profile/global-settings/CHART-TREND-ANALYSIS-MONITOR-OVERVIEW/      data=${payload_trend_analysis}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -503,7 +503,7 @@ Asset Class - Cumulative Return: Trend
     ${response} =   Post Request    d1g1t_api   /api/v1/calc/trend-cumul-ret/       data=${payload_trend}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -523,7 +523,7 @@ Asset Class - Return By Period: Trend Analysis Chart
     ${response} =   Put Request    d1g1t_api        /api/v1/profile/global-settings/CHART-TREND-ANALYSIS-MONITOR-OVERVIEW/      data=${payload_trend_analysis}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -540,7 +540,7 @@ Asset Class - Return By Period: Trend
     ${response} =   Post Request    d1g1t_api   /api/v1/calc/trend-ret-by-period/      data=${payload_trend}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -563,7 +563,7 @@ Currency - Assets Under Management: Trend Analysis Chart
     ${response} =   Put Request    d1g1t_api        /api/v1/profile/global-settings/CHART-TREND-ANALYSIS-MONITOR-OVERVIEW/      data=${payload_trend_analysis}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -580,7 +580,7 @@ Currency - Assets Under Management: Trend
     ${response} =   Post Request    d1g1t_api   /api/v1/calc/trend-aum/      data=${payload_trend}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -600,7 +600,7 @@ Currency - Allocation: Trend Analysis Chart
     ${response} =   Put Request    d1g1t_api        /api/v1/profile/global-settings/CHART-TREND-ANALYSIS-MONITOR-OVERVIEW/      data=${payload_trend_analysis}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -617,7 +617,7 @@ Currency - Allocation: Trend
     ${response} =   Post Request    d1g1t_api   /api/v1/calc/trend-alloc/      data=${payload_trend}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -637,7 +637,7 @@ Currency - Cumulative Return: Trend Analysis Chart
     ${response} =   Put Request    d1g1t_api        /api/v1/profile/global-settings/CHART-TREND-ANALYSIS-MONITOR-OVERVIEW/      data=${payload_trend_analysis}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -654,7 +654,7 @@ Currency - Cumulative Return: Trend
     ${response} =   Post Request    d1g1t_api   /api/v1/calc/trend-cumul-ret/       data=${payload_trend}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -674,7 +674,7 @@ Currency - Return By Period: Trend Analysis Chart
     ${response} =   Put Request    d1g1t_api        /api/v1/profile/global-settings/CHART-TREND-ANALYSIS-MONITOR-OVERVIEW/      data=${payload_trend_analysis}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -691,7 +691,7 @@ Currency - Return By Period: Trend
     ${response} =   Post Request    d1g1t_api   /api/v1/calc/trend-ret-by-period/      data=${payload_trend}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -713,7 +713,7 @@ Strategy - Assets Under Management: Trend Analysis Chart
     ${response} =   Put Request    d1g1t_api        /api/v1/profile/global-settings/CHART-TREND-ANALYSIS-MONITOR-OVERVIEW/      data=${payload_trend_analysis}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -730,7 +730,7 @@ Strategy - Assets Under Management: Trend
     ${response} =   Post Request    d1g1t_api   /api/v1/calc/trend-aum/      data=${payload_trend}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -750,7 +750,7 @@ Strategy - Allocation: Trend Analysis Chart
     ${response} =   Put Request    d1g1t_api        /api/v1/profile/global-settings/CHART-TREND-ANALYSIS-MONITOR-OVERVIEW/      data=${payload_trend_analysis}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -767,7 +767,7 @@ Strategy - Allocation: Trend
     ${response} =   Post Request    d1g1t_api   /api/v1/calc/trend-alloc/      data=${payload_trend}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -787,7 +787,7 @@ Strategy - Cumulative Return: Trend Analysis Chart
     ${response} =   Put Request    d1g1t_api        /api/v1/profile/global-settings/CHART-TREND-ANALYSIS-MONITOR-OVERVIEW/      data=${payload_trend_analysis}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -804,7 +804,7 @@ Strategy - Cumulative Return: Trend
     ${response} =   Post Request    d1g1t_api   /api/v1/calc/trend-cumul-ret/       data=${payload_trend}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -824,7 +824,7 @@ Strategy - Return By Period: Trend Analysis Chart
     ${response} =   Put Request    d1g1t_api        /api/v1/profile/global-settings/CHART-TREND-ANALYSIS-MONITOR-OVERVIEW/      data=${payload_trend_analysis}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -841,9 +841,19 @@ Strategy - Return By Period: Trend
     ${response} =   Post Request    d1g1t_api   /api/v1/calc/trend-ret-by-period/      data=${payload_trend}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
     Should Contain      ${response_body}                        Cash & Cash Equivalent
+
+
+
+
+
+
+
+
+
+
 

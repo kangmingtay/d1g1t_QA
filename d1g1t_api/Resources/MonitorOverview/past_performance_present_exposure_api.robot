@@ -27,7 +27,7 @@ Return Contribution: Light Cone Analysis (1 Year)
     ${response} =   Put Request    d1g1t_api        /api/v1/profile/global-settings/LIGHT-CONE-ANALYTICS-MONITOR-OVERVIEW/      data=${payload_light_cone_analysis}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -41,7 +41,7 @@ Return Contribution: Return Contribution Overview (1 Year)
     ${response} =   Get Request    d1g1t_api        /api/v1/profile/global-settings/RETURN-CONTRIBUTION-MONITOR-OVERVIEW/
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
 Return Contribution: Past Performance (1 Year)
 
@@ -53,7 +53,7 @@ Return Contribution: Past Performance (1 Year)
     ${response} =   Post Request    d1g1t_api   /api/v1/calc/past-perf-ret-contrib/      data=${payload_past_performance}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -71,7 +71,7 @@ Return Contribution: Return Contribution Overview (1 Month)
     ${response} =   Put Request    d1g1t_api        /api/v1/profile/global-settings/RETURN-CONTRIBUTION-MONITOR-OVERVIEW/      data=${payload_return_contribution}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -89,7 +89,7 @@ Return Contribution: Past Performance (1 Month)
     ${response} =   Post Request    d1g1t_api   /api/v1/calc/past-perf-ret-contrib/      data=${payload_past_performance}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -107,7 +107,7 @@ Return Contribution: Return Contribution Overview (3 Months)
     ${response} =   Put Request    d1g1t_api        /api/v1/profile/global-settings/RETURN-CONTRIBUTION-MONITOR-OVERVIEW/      data=${payload_return_contribution}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -125,7 +125,7 @@ Return Contribution: Past Performance (3 Months)
     ${response} =   Post Request    d1g1t_api   /api/v1/calc/past-perf-ret-contrib/      data=${payload_past_performance}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -143,7 +143,7 @@ Return Contribution: Return Contribution Overview (6 Months)
     ${response} =   Put Request    d1g1t_api        /api/v1/profile/global-settings/RETURN-CONTRIBUTION-MONITOR-OVERVIEW/      data=${payload_return_contribution}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -161,7 +161,7 @@ Return Contribution: Past Performance (6 Months)
     ${response} =   Post Request    d1g1t_api   /api/v1/calc/past-perf-ret-contrib/      data=${payload_past_performance}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -179,7 +179,7 @@ Return Contribution: Return Contribution Overview (Year-to-Date)
     ${response} =   Put Request    d1g1t_api        /api/v1/profile/global-settings/RETURN-CONTRIBUTION-MONITOR-OVERVIEW/      data=${payload_return_contribution}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -197,7 +197,7 @@ Return Contribution: Past Performance (Year-to-Date)
     ${response} =   Post Request    d1g1t_api   /api/v1/calc/past-perf-ret-contrib/      data=${payload_past_performance}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -215,7 +215,7 @@ Return Contribution: Return Contribution Overview (3 Years)
     ${response} =   Put Request    d1g1t_api        /api/v1/profile/global-settings/RETURN-CONTRIBUTION-MONITOR-OVERVIEW/      data=${payload_return_contribution}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -233,7 +233,7 @@ Return Contribution: Past Performance (3 Years)
     ${response} =   Post Request    d1g1t_api   /api/v1/calc/past-perf-ret-contrib/      data=${payload_past_performance}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -251,7 +251,7 @@ Return Contribution: Return Contribution Overview (5 Years)
     ${response} =   Put Request    d1g1t_api        /api/v1/profile/global-settings/RETURN-CONTRIBUTION-MONITOR-OVERVIEW/      data=${payload_return_contribution}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -269,7 +269,7 @@ Return Contribution: Past Performance (5 Years)
     ${response} =   Post Request    d1g1t_api   /api/v1/calc/past-perf-ret-contrib/      data=${payload_past_performance}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -287,7 +287,7 @@ Return Contribution: Return Contribution Overview (Since Inception)
     ${response} =   Put Request    d1g1t_api        /api/v1/profile/global-settings/RETURN-CONTRIBUTION-MONITOR-OVERVIEW/      data=${payload_return_contribution}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -305,7 +305,7 @@ Return Contribution: Past Performance (Since Inception)
     ${response} =   Post Request    d1g1t_api   /api/v1/calc/past-perf-ret-contrib/      data=${payload_past_performance}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -327,7 +327,7 @@ Return: Light Cone Analysis (1 Year)
     ${response} =   Put Request    d1g1t_api        /api/v1/profile/global-settings/LIGHT-CONE-ANALYTICS-MONITOR-OVERVIEW/      data=${payload_light_cone_analysis}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -341,7 +341,7 @@ Return: Return Overview (1 Year)
     ${response} =   Get Request    d1g1t_api        /api/v1/profile/global-settings/RETURN-MONITOR-OVERVIEW/
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -357,7 +357,7 @@ Return: Past Performance (1 Year)
     ${response} =   Post Request    d1g1t_api   /api/v1/calc/past-perf-return/     data=${payload_past_performance}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -375,7 +375,7 @@ Return: Return Overview (1 Month)
     ${response} =   Put Request    d1g1t_api        /api/v1/profile/global-settings/RETURN-MONITOR-OVERVIEW/      data=${payload_return_overview}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -393,7 +393,7 @@ Return: Past Performance (1 Month)
     ${response} =   Post Request    d1g1t_api   /api/v1/calc/past-perf-return/     data=${payload_past_performance}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -411,7 +411,7 @@ Return: Return Overview (3 Months)
     ${response} =   Put Request    d1g1t_api        /api/v1/profile/global-settings/RETURN-MONITOR-OVERVIEW/      data=${payload_return_overview}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -429,7 +429,7 @@ Return: Past Performance (3 Months)
     ${response} =   Post Request    d1g1t_api   /api/v1/calc/past-perf-return/     data=${payload_past_performance}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -447,7 +447,7 @@ Return: Return Overview (6 Months)
     ${response} =   Put Request    d1g1t_api        /api/v1/profile/global-settings/RETURN-MONITOR-OVERVIEW/      data=${payload_return_overview}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -465,7 +465,7 @@ Return: Past Performance (6 Months)
     ${response} =   Post Request    d1g1t_api   /api/v1/calc/past-perf-return/     data=${payload_past_performance}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -483,7 +483,7 @@ Return: Return Overview (Year-to-Date)
     ${response} =   Put Request    d1g1t_api        /api/v1/profile/global-settings/RETURN-MONITOR-OVERVIEW/      data=${payload_return_overview}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -501,7 +501,7 @@ Return: Past Performance (Year-to-Date)
     ${response} =   Post Request    d1g1t_api   /api/v1/calc/past-perf-return/     data=${payload_past_performance}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -519,7 +519,7 @@ Return: Return Overview (3 Years)
     ${response} =   Put Request    d1g1t_api        /api/v1/profile/global-settings/RETURN-MONITOR-OVERVIEW/      data=${payload_return_overview}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -537,7 +537,7 @@ Return: Past Performance (3 Years)
     ${response} =   Post Request    d1g1t_api   /api/v1/calc/past-perf-return/     data=${payload_past_performance}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -555,7 +555,7 @@ Return: Return Overview (5 Years)
     ${response} =   Put Request    d1g1t_api        /api/v1/profile/global-settings/RETURN-MONITOR-OVERVIEW/      data=${payload_return_overview}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -573,7 +573,7 @@ Return: Past Performance (5 Years)
     ${response} =   Post Request    d1g1t_api   /api/v1/calc/past-perf-return/     data=${payload_past_performance}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -591,7 +591,7 @@ Return: Return Overview (Since Inception)
     ${response} =   Put Request    d1g1t_api        /api/v1/profile/global-settings/RETURN-MONITOR-OVERVIEW/      data=${payload_return_overview}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -609,12 +609,11 @@ Return: Past Performance (Since Inception)
     ${response} =   Post Request    d1g1t_api   /api/v1/calc/past-perf-return/     data=${payload_past_performance}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
     Should Contain      ${response_body}                        Return
-
 
 
 # Present Exposure
@@ -629,7 +628,7 @@ Present Exposure
     ${response} =   Post Request    d1g1t_api   /api/v1/calc/present-exposure/     data=${payload_present_exposure}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}

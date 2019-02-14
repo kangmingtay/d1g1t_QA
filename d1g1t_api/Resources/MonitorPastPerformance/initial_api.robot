@@ -24,7 +24,7 @@ Past Performance: Global Filter
     ${response} =   Get Request    d1g1t_api        /api/v1/profile/global-filter/
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -38,7 +38,7 @@ Past Performance: Global Selected Filter
     ${response} =   Get Request    d1g1t_api        /api/v1/profile/global-settings/global-selected-filter/
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
 Past Performance: Trend Analysis Chart
 
@@ -48,7 +48,7 @@ Past Performance: Trend Analysis Chart
     ${response} =   Get Request    d1g1t_api                    /api/v1/profile/global-settings/CHART-TREND-ANALYSIS-MONITOR-DRILLDOWN-PAST/
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -66,7 +66,7 @@ Past Performance: Tickers Price
     ${response} =   Post Request    d1g1t_api                   /api/v1/market/tickers/tickersprice/     data=${payload_tickers_price}    headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -80,7 +80,7 @@ Past Performance: Graphic Info
     ${response} =   Get Request    d1g1t_api        /api/v1/profile/global-settings/infographic:INFOGRAPHIC-MONITOR-DRILLDOWN-PAST/
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
 Past Performance: Performance Range
 
@@ -92,7 +92,7 @@ Past Performance: Performance Range
     ${response} =   Post Request    d1g1t_api                   /api/v1/calc/performance-range/     data=${payload_performance_range}    headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -108,7 +108,7 @@ Past Performance: Contribution
     ${response} =   Post Request    d1g1t_api                   /api/v1/calc/contribution/     data=${payload_contribution}    headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -124,7 +124,7 @@ Past Performance: Cumulative Return
     ${response} =   Post Request    d1g1t_api                   /api/v1/calc/trend-cumul-ret/     data=${payload_cumulative_return}    headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}

@@ -27,7 +27,7 @@ Asset Class: Allocation Changes - Portfolio Management (1 Year)
     ${response} =   Put Request    d1g1t_api        /api/v1/profile/global-settings/PORTFOLIO-MANAGEMENT/      data=${payload_portfolio_management}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -45,7 +45,7 @@ Asset Class: Allocation Changes - PF Activity (1 Year)
     ${response} =   Post Request    d1g1t_api   /api/v1/calc/pf-activity-group1/      data=${payload_pf_activity}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -65,7 +65,7 @@ Asset Class: Allocation Changes - Portfolio Management (1 Month)
     ${response} =   Put Request    d1g1t_api        /api/v1/profile/global-settings/PORTFOLIO-MANAGEMENT/      data=${payload_portfolio_management}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -85,7 +85,7 @@ Asset Class: Allocation Changes - PF Activity (1 Month)
     ${response} =   Post Request    d1g1t_api   /api/v1/calc/pf-activity-group1/      data=${payload_pf_activity}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -105,7 +105,7 @@ Asset Class: Allocation Changes - Portfolio Management (3 Months)
     ${response} =   Put Request    d1g1t_api        /api/v1/profile/global-settings/PORTFOLIO-MANAGEMENT/      data=${payload_portfolio_management}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -125,7 +125,7 @@ Asset Class: Allocation Changes - PF Activity (3 Months)
     ${response} =   Post Request    d1g1t_api   /api/v1/calc/pf-activity-group1/      data=${payload_pf_activity}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -145,7 +145,7 @@ Asset Class: Allocation Changes - Portfolio Management (6 Months)
     ${response} =   Put Request    d1g1t_api        /api/v1/profile/global-settings/PORTFOLIO-MANAGEMENT/      data=${payload_portfolio_management}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -165,7 +165,7 @@ Asset Class: Allocation Changes - PF Activity (6 Months)
     ${response} =   Post Request    d1g1t_api   /api/v1/calc/pf-activity-group1/      data=${payload_pf_activity}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -185,7 +185,7 @@ Asset Class: Allocation Changes - Portfolio Management (Year-to-Date)
     ${response} =   Put Request    d1g1t_api        /api/v1/profile/global-settings/PORTFOLIO-MANAGEMENT/      data=${payload_portfolio_management}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -205,7 +205,7 @@ Asset Class: Allocation Changes - PF Activity (Year-to-Date)
     ${response} =   Post Request    d1g1t_api   /api/v1/calc/pf-activity-group1/      data=${payload_pf_activity}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -225,7 +225,7 @@ Asset Class: Allocation Changes - Portfolio Management (3 Years)
     ${response} =   Put Request    d1g1t_api        /api/v1/profile/global-settings/PORTFOLIO-MANAGEMENT/      data=${payload_portfolio_management}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -245,7 +245,7 @@ Asset Class: Allocation Changes - PF Activity (3 Years)
     ${response} =   Post Request    d1g1t_api   /api/v1/calc/pf-activity-group1/      data=${payload_pf_activity}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -265,7 +265,7 @@ Asset Class: Allocation Changes - Portfolio Management (5 Years)
     ${response} =   Put Request    d1g1t_api        /api/v1/profile/global-settings/PORTFOLIO-MANAGEMENT/      data=${payload_portfolio_management}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -285,7 +285,7 @@ Asset Class: Allocation Changes - PF Activity (5 Years)
     ${response} =   Post Request    d1g1t_api   /api/v1/calc/pf-activity-group1/      data=${payload_pf_activity}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -305,7 +305,7 @@ Asset Class: Allocation Changes - Portfolio Management (Since Inception)
     ${response} =   Put Request    d1g1t_api        /api/v1/profile/global-settings/PORTFOLIO-MANAGEMENT/      data=${payload_portfolio_management}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -325,7 +325,7 @@ Asset Class: Allocation Changes - PF Activity (Since Inception)
     ${response} =   Post Request    d1g1t_api   /api/v1/calc/pf-activity-group1/      data=${payload_pf_activity}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -347,7 +347,7 @@ Asset Class: Quarterly Allocation Changes - Portfolio Management (1 Year)
     ${response} =   Put Request    d1g1t_api        /api/v1/profile/global-settings/PORTFOLIO-MANAGEMENT/      data=${payload_portfolio_management}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -366,7 +366,7 @@ Asset Class: Quarterly Allocation Changes - PF Activity (1 Year)
     ${response} =   Post Request    d1g1t_api   /api/v1/calc/pf-activity-group1/      data=${payload_pf_activity}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -387,7 +387,7 @@ Asset Class: Allocation - Portfolio Management (1 Year)
     ${response} =   Put Request    d1g1t_api        /api/v1/profile/global-settings/PORTFOLIO-MANAGEMENT/      data=${payload_portfolio_management}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -405,7 +405,7 @@ Asset Class: Allocation - PF Activity (1 Year)
     ${response} =   Post Request    d1g1t_api   /api/v1/calc/pf-activity-group1/      data=${payload_pf_activity}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -425,7 +425,7 @@ Asset Class: Allocation - Portfolio Management (1 Month)
     ${response} =   Put Request    d1g1t_api        /api/v1/profile/global-settings/PORTFOLIO-MANAGEMENT/      data=${payload_portfolio_management}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -445,7 +445,7 @@ Asset Class: Allocation - PF Activity (1 Month)
     ${response} =   Post Request    d1g1t_api   /api/v1/calc/pf-activity-group1/      data=${payload_pf_activity}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -465,7 +465,7 @@ Asset Class: Allocation - Portfolio Management (3 Months)
     ${response} =   Put Request    d1g1t_api        /api/v1/profile/global-settings/PORTFOLIO-MANAGEMENT/      data=${payload_portfolio_management}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -485,7 +485,7 @@ Asset Class: Allocation - PF Activity (3 Months)
     ${response} =   Post Request    d1g1t_api   /api/v1/calc/pf-activity-group1/      data=${payload_pf_activity}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -505,7 +505,7 @@ Asset Class: Allocation - Portfolio Management (6 Months)
     ${response} =   Put Request    d1g1t_api        /api/v1/profile/global-settings/PORTFOLIO-MANAGEMENT/      data=${payload_portfolio_management}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -525,7 +525,7 @@ Asset Class: Allocation - PF Activity (6 Months)
     ${response} =   Post Request    d1g1t_api   /api/v1/calc/pf-activity-group1/      data=${payload_pf_activity}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -545,7 +545,7 @@ Asset Class: Allocation - Portfolio Management (Year-to-Date)
     ${response} =   Put Request    d1g1t_api        /api/v1/profile/global-settings/PORTFOLIO-MANAGEMENT/      data=${payload_portfolio_management}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -565,7 +565,7 @@ Asset Class: Allocation - PF Activity (Year-to-Date)
     ${response} =   Post Request    d1g1t_api   /api/v1/calc/pf-activity-group1/      data=${payload_pf_activity}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -585,7 +585,7 @@ Asset Class: Allocation - Portfolio Management (3 Years)
     ${response} =   Put Request    d1g1t_api        /api/v1/profile/global-settings/PORTFOLIO-MANAGEMENT/      data=${payload_portfolio_management}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -605,7 +605,7 @@ Asset Class: Allocation - PF Activity (3 Years)
     ${response} =   Post Request    d1g1t_api   /api/v1/calc/pf-activity-group1/      data=${payload_pf_activity}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -625,7 +625,7 @@ Asset Class: Allocation - Portfolio Management (5 Years)
     ${response} =   Put Request    d1g1t_api        /api/v1/profile/global-settings/PORTFOLIO-MANAGEMENT/      data=${payload_portfolio_management}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -645,7 +645,7 @@ Asset Class: Allocation - PF Activity (5 Years)
     ${response} =   Post Request    d1g1t_api   /api/v1/calc/pf-activity-group1/      data=${payload_pf_activity}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -665,7 +665,7 @@ Asset Class: Allocation - Portfolio Management (Since Inception)
     ${response} =   Put Request    d1g1t_api        /api/v1/profile/global-settings/PORTFOLIO-MANAGEMENT/      data=${payload_portfolio_management}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -685,7 +685,7 @@ Asset Class: Allocation - PF Activity (Since Inception)
     ${response} =   Post Request    d1g1t_api   /api/v1/calc/pf-activity-group1/      data=${payload_pf_activity}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -707,7 +707,7 @@ Asset Class: Quarterly Allocation - Portfolio Management (1 Year)
     ${response} =   Put Request    d1g1t_api        /api/v1/profile/global-settings/PORTFOLIO-MANAGEMENT/      data=${payload_portfolio_management}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -726,7 +726,7 @@ Asset Class: Quarterly Allocation - PF Activity (1 Year)
     ${response} =   Post Request    d1g1t_api   /api/v1/calc/pf-activity-group1/      data=${payload_pf_activity}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -747,7 +747,7 @@ Asset Class: Net Deposits/Withdrawals - Portfolio Management (1 Year)
     ${response} =   Put Request    d1g1t_api        /api/v1/profile/global-settings/PORTFOLIO-MANAGEMENT/      data=${payload_portfolio_management}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -765,7 +765,7 @@ Asset Class: Net Deposits/Withdrawals - PF Activity (1 Year)
     ${response} =   Post Request    d1g1t_api   /api/v1/calc/pf-activity-group1/      data=${payload_pf_activity}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -785,7 +785,7 @@ Asset Class: Net Deposits/Withdrawals - Portfolio Management (1 Month)
     ${response} =   Put Request    d1g1t_api        /api/v1/profile/global-settings/PORTFOLIO-MANAGEMENT/      data=${payload_portfolio_management}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -805,7 +805,7 @@ Asset Class: Net Deposits/Withdrawals - PF Activity (1 Month)
     ${response} =   Post Request    d1g1t_api   /api/v1/calc/pf-activity-group1/      data=${payload_pf_activity}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -825,7 +825,7 @@ Asset Class: Net Deposits/Withdrawals - Portfolio Management (3 Months)
     ${response} =   Put Request    d1g1t_api        /api/v1/profile/global-settings/PORTFOLIO-MANAGEMENT/      data=${payload_portfolio_management}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -845,7 +845,7 @@ Asset Class: Net Deposits/Withdrawals - PF Activity (3 Months)
     ${response} =   Post Request    d1g1t_api   /api/v1/calc/pf-activity-group1/      data=${payload_pf_activity}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -865,7 +865,7 @@ Asset Class: Net Deposits/Withdrawals - Portfolio Management (6 Months)
     ${response} =   Put Request    d1g1t_api        /api/v1/profile/global-settings/PORTFOLIO-MANAGEMENT/      data=${payload_portfolio_management}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -885,7 +885,7 @@ Asset Class: Net Deposits/Withdrawals - PF Activity (6 Months)
     ${response} =   Post Request    d1g1t_api   /api/v1/calc/pf-activity-group1/      data=${payload_pf_activity}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -905,7 +905,7 @@ Asset Class: Net Deposits/Withdrawals - Portfolio Management (Year-to-Date)
     ${response} =   Put Request    d1g1t_api        /api/v1/profile/global-settings/PORTFOLIO-MANAGEMENT/      data=${payload_portfolio_management}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -925,7 +925,7 @@ Asset Class: Net Deposits/Withdrawals - PF Activity (Year-to-Date)
     ${response} =   Post Request    d1g1t_api   /api/v1/calc/pf-activity-group1/      data=${payload_pf_activity}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -945,7 +945,7 @@ Asset Class: Net Deposits/Withdrawals - Portfolio Management (3 Years)
     ${response} =   Put Request    d1g1t_api        /api/v1/profile/global-settings/PORTFOLIO-MANAGEMENT/      data=${payload_portfolio_management}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -965,7 +965,7 @@ Asset Class: Net Deposits/Withdrawals - PF Activity (3 Years)
     ${response} =   Post Request    d1g1t_api   /api/v1/calc/pf-activity-group1/      data=${payload_pf_activity}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -985,7 +985,7 @@ Asset Class: Net Deposits/Withdrawals - Portfolio Management (5 Years)
     ${response} =   Put Request    d1g1t_api        /api/v1/profile/global-settings/PORTFOLIO-MANAGEMENT/      data=${payload_portfolio_management}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -1005,7 +1005,7 @@ Asset Class: Net Deposits/Withdrawals - PF Activity (5 Years)
     ${response} =   Post Request    d1g1t_api   /api/v1/calc/pf-activity-group1/      data=${payload_pf_activity}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -1025,7 +1025,7 @@ Asset Class: Net Deposits/Withdrawals - Portfolio Management (Since Inception)
     ${response} =   Put Request    d1g1t_api        /api/v1/profile/global-settings/PORTFOLIO-MANAGEMENT/      data=${payload_portfolio_management}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -1045,7 +1045,7 @@ Asset Class: Net Deposits/Withdrawals - PF Activity (Since Inception)
     ${response} =   Post Request    d1g1t_api   /api/v1/calc/pf-activity-group1/      data=${payload_pf_activity}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -1067,7 +1067,7 @@ Asset Class: Quarterly Net Deposits/Withdrawals - Portfolio Management (1 Year)
     ${response} =   Put Request    d1g1t_api        /api/v1/profile/global-settings/PORTFOLIO-MANAGEMENT/      data=${payload_portfolio_management}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -1086,7 +1086,7 @@ Asset Class: Quarterly Net Deposits/Withdrawals - PF Activity (1 Year)
     ${response} =   Post Request    d1g1t_api   /api/v1/calc/pf-activity-group1/      data=${payload_pf_activity}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -1107,7 +1107,7 @@ Asset Class: Quarterly Net Deposits/Withdrawals - PF Activity (1 Year)
 #    ${response} =   Put Request    d1g1t_api        /api/v1/profile/global-settings/PORTFOLIO-MANAGEMENT/      data=${payload_portfolio_management}     headers=&{CONTENT_TYPE}
 #
 #    # Check the Response status
-#    Should Be Equal As Strings  ${response.status_code}         200
+#    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 #
 #    # Check the Response body
 #    ${response_body} =  Set Variable  ${response.json()}
@@ -1125,7 +1125,7 @@ Asset Class: Quarterly Net Deposits/Withdrawals - PF Activity (1 Year)
 #    ${response} =   Post Request    d1g1t_api   /api/v1/calc/pf-activity-group1/      data=${payload_pf_activity}     headers=&{CONTENT_TYPE}
 #
 #    # Check the Response status
-#    Should Be Equal As Strings  ${response.status_code}         200
+#    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 #
 #    # Check the Response body
 #    ${response_body} =  Set Variable  ${response.text}
@@ -1145,7 +1145,7 @@ Asset Class: Quarterly Net Deposits/Withdrawals - PF Activity (1 Year)
 #    ${response} =   Put Request    d1g1t_api        /api/v1/profile/global-settings/PORTFOLIO-MANAGEMENT/      data=${payload_portfolio_management}     headers=&{CONTENT_TYPE}
 #
 #    # Check the Response status
-#    Should Be Equal As Strings  ${response.status_code}         200
+#    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 #
 #    # Check the Response body
 #    ${response_body} =  Set Variable  ${response.json()}
@@ -1165,7 +1165,7 @@ Asset Class: Quarterly Net Deposits/Withdrawals - PF Activity (1 Year)
 #    ${response} =   Post Request    d1g1t_api   /api/v1/calc/pf-activity-group1/      data=${payload_pf_activity}     headers=&{CONTENT_TYPE}
 #
 #    # Check the Response status
-#    Should Be Equal As Strings  ${response.status_code}         200
+#    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 #
 #    # Check the Response body
 #    ${response_body} =  Set Variable  ${response.text}
@@ -1185,7 +1185,7 @@ Asset Class: Quarterly Net Deposits/Withdrawals - PF Activity (1 Year)
 #    ${response} =   Put Request    d1g1t_api        /api/v1/profile/global-settings/PORTFOLIO-MANAGEMENT/      data=${payload_portfolio_management}     headers=&{CONTENT_TYPE}
 #
 #    # Check the Response status
-#    Should Be Equal As Strings  ${response.status_code}         200
+#    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 #
 #    # Check the Response body
 #    ${response_body} =  Set Variable  ${response.json()}
@@ -1205,7 +1205,7 @@ Asset Class: Quarterly Net Deposits/Withdrawals - PF Activity (1 Year)
 #    ${response} =   Post Request    d1g1t_api   /api/v1/calc/pf-activity-group1/      data=${payload_pf_activity}     headers=&{CONTENT_TYPE}
 #
 #    # Check the Response status
-#    Should Be Equal As Strings  ${response.status_code}         200
+#    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 #
 #    # Check the Response body
 #    ${response_body} =  Set Variable  ${response.text}
@@ -1225,7 +1225,7 @@ Asset Class: Quarterly Net Deposits/Withdrawals - PF Activity (1 Year)
 #    ${response} =   Put Request    d1g1t_api        /api/v1/profile/global-settings/PORTFOLIO-MANAGEMENT/      data=${payload_portfolio_management}     headers=&{CONTENT_TYPE}
 #
 #    # Check the Response status
-#    Should Be Equal As Strings  ${response.status_code}         200
+#    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 #
 #    # Check the Response body
 #    ${response_body} =  Set Variable  ${response.json()}
@@ -1245,7 +1245,7 @@ Asset Class: Quarterly Net Deposits/Withdrawals - PF Activity (1 Year)
 #    ${response} =   Post Request    d1g1t_api   /api/v1/calc/pf-activity-group1/      data=${payload_pf_activity}     headers=&{CONTENT_TYPE}
 #
 #    # Check the Response status
-#    Should Be Equal As Strings  ${response.status_code}         200
+#    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 #
 #    # Check the Response body
 #    ${response_body} =  Set Variable  ${response.text}
@@ -1265,7 +1265,7 @@ Asset Class: Quarterly Net Deposits/Withdrawals - PF Activity (1 Year)
 #    ${response} =   Put Request    d1g1t_api        /api/v1/profile/global-settings/PORTFOLIO-MANAGEMENT/      data=${payload_portfolio_management}     headers=&{CONTENT_TYPE}
 #
 #    # Check the Response status
-#    Should Be Equal As Strings  ${response.status_code}         200
+#    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 #
 #    # Check the Response body
 #    ${response_body} =  Set Variable  ${response.json()}
@@ -1285,7 +1285,7 @@ Asset Class: Quarterly Net Deposits/Withdrawals - PF Activity (1 Year)
 #    ${response} =   Post Request    d1g1t_api   /api/v1/calc/pf-activity-group1/      data=${payload_pf_activity}     headers=&{CONTENT_TYPE}
 #
 #    # Check the Response status
-#    Should Be Equal As Strings  ${response.status_code}         200
+#    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 #
 #    # Check the Response body
 #    ${response_body} =  Set Variable  ${response.text}
@@ -1305,7 +1305,7 @@ Asset Class: Quarterly Net Deposits/Withdrawals - PF Activity (1 Year)
 #    ${response} =   Put Request    d1g1t_api        /api/v1/profile/global-settings/PORTFOLIO-MANAGEMENT/      data=${payload_portfolio_management}     headers=&{CONTENT_TYPE}
 #
 #    # Check the Response status
-#    Should Be Equal As Strings  ${response.status_code}         200
+#    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 #
 #    # Check the Response body
 #    ${response_body} =  Set Variable  ${response.json()}
@@ -1325,7 +1325,7 @@ Asset Class: Quarterly Net Deposits/Withdrawals - PF Activity (1 Year)
 #    ${response} =   Post Request    d1g1t_api   /api/v1/calc/pf-activity-group1/      data=${payload_pf_activity}     headers=&{CONTENT_TYPE}
 #
 #    # Check the Response status
-#    Should Be Equal As Strings  ${response.status_code}         200
+#    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 #
 #    # Check the Response body
 #    ${response_body} =  Set Variable  ${response.text}
@@ -1345,7 +1345,7 @@ Asset Class: Quarterly Net Deposits/Withdrawals - PF Activity (1 Year)
 #    ${response} =   Put Request    d1g1t_api        /api/v1/profile/global-settings/PORTFOLIO-MANAGEMENT/      data=${payload_portfolio_management}     headers=&{CONTENT_TYPE}
 #
 #    # Check the Response status
-#    Should Be Equal As Strings  ${response.status_code}         200
+#    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 #
 #    # Check the Response body
 #    ${response_body} =  Set Variable  ${response.json()}
@@ -1365,7 +1365,7 @@ Asset Class: Quarterly Net Deposits/Withdrawals - PF Activity (1 Year)
 #    ${response} =   Post Request    d1g1t_api   /api/v1/calc/pf-activity-group1/      data=${payload_pf_activity}     headers=&{CONTENT_TYPE}
 #
 #    # Check the Response status
-#    Should Be Equal As Strings  ${response.status_code}         200
+#    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 #
 #    # Check the Response body
 #    ${response_body} =  Set Variable  ${response.text}
@@ -1385,7 +1385,7 @@ Asset Class: Quarterly Net Deposits/Withdrawals - PF Activity (1 Year)
 #    ${response} =   Put Request    d1g1t_api        /api/v1/profile/global-settings/PORTFOLIO-MANAGEMENT/      data=${payload_portfolio_management}     headers=&{CONTENT_TYPE}
 #
 #    # Check the Response status
-#    Should Be Equal As Strings  ${response.status_code}         200
+#    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 #
 #    # Check the Response body
 #    ${response_body} =  Set Variable  ${response.json()}
@@ -1405,7 +1405,7 @@ Asset Class: Quarterly Net Deposits/Withdrawals - PF Activity (1 Year)
 #    ${response} =   Post Request    d1g1t_api   /api/v1/calc/pf-activity-group1/      data=${payload_pf_activity}     headers=&{CONTENT_TYPE}
 #
 #    # Check the Response status
-#    Should Be Equal As Strings  ${response.status_code}         200
+#    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 #
 #    # Check the Response body
 #    ${response_body} =  Set Variable  ${response.text}
@@ -1427,7 +1427,7 @@ Asset Class: Quarterly Net Deposits/Withdrawals - PF Activity (1 Year)
 #    ${response} =   Put Request    d1g1t_api        /api/v1/profile/global-settings/PORTFOLIO-MANAGEMENT/      data=${payload_portfolio_management}     headers=&{CONTENT_TYPE}
 #
 #    # Check the Response status
-#    Should Be Equal As Strings  ${response.status_code}         200
+#    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 #
 #    # Check the Response body
 #    ${response_body} =  Set Variable  ${response.json()}
@@ -1446,7 +1446,7 @@ Asset Class: Quarterly Net Deposits/Withdrawals - PF Activity (1 Year)
 #    ${response} =   Post Request    d1g1t_api   /api/v1/calc/pf-activity-group1/      data=${payload_pf_activity}     headers=&{CONTENT_TYPE}
 #
 #    # Check the Response status
-#    Should Be Equal As Strings  ${response.status_code}         200
+#    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 #
 #    # Check the Response body
 #    ${response_body} =  Set Variable  ${response.text}
@@ -1467,7 +1467,7 @@ Asset Class: Quarterly Net Deposits/Withdrawals - PF Activity (1 Year)
 #    ${response} =   Put Request    d1g1t_api        /api/v1/profile/global-settings/PORTFOLIO-MANAGEMENT/      data=${payload_portfolio_management}     headers=&{CONTENT_TYPE}
 #
 #    # Check the Response status
-#    Should Be Equal As Strings  ${response.status_code}         200
+#    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 #
 #    # Check the Response body
 #    ${response_body} =  Set Variable  ${response.json()}
@@ -1485,7 +1485,7 @@ Asset Class: Quarterly Net Deposits/Withdrawals - PF Activity (1 Year)
 #    ${response} =   Post Request    d1g1t_api   /api/v1/calc/pf-activity-group1/      data=${payload_pf_activity}     headers=&{CONTENT_TYPE}
 #
 #    # Check the Response status
-#    Should Be Equal As Strings  ${response.status_code}         200
+#    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 #
 #    # Check the Response body
 #    ${response_body} =  Set Variable  ${response.text}
@@ -1505,7 +1505,7 @@ Asset Class: Quarterly Net Deposits/Withdrawals - PF Activity (1 Year)
 #    ${response} =   Put Request    d1g1t_api        /api/v1/profile/global-settings/PORTFOLIO-MANAGEMENT/      data=${payload_portfolio_management}     headers=&{CONTENT_TYPE}
 #
 #    # Check the Response status
-#    Should Be Equal As Strings  ${response.status_code}         200
+#    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 #
 #    # Check the Response body
 #    ${response_body} =  Set Variable  ${response.json()}
@@ -1525,7 +1525,7 @@ Asset Class: Quarterly Net Deposits/Withdrawals - PF Activity (1 Year)
 #    ${response} =   Post Request    d1g1t_api   /api/v1/calc/pf-activity-group1/      data=${payload_pf_activity}     headers=&{CONTENT_TYPE}
 #
 #    # Check the Response status
-#    Should Be Equal As Strings  ${response.status_code}         200
+#    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 #
 #    # Check the Response body
 #    ${response_body} =  Set Variable  ${response.text}
@@ -1545,7 +1545,7 @@ Asset Class: Quarterly Net Deposits/Withdrawals - PF Activity (1 Year)
 #    ${response} =   Put Request    d1g1t_api        /api/v1/profile/global-settings/PORTFOLIO-MANAGEMENT/      data=${payload_portfolio_management}     headers=&{CONTENT_TYPE}
 #
 #    # Check the Response status
-#    Should Be Equal As Strings  ${response.status_code}         200
+#    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 #
 #    # Check the Response body
 #    ${response_body} =  Set Variable  ${response.json()}
@@ -1565,7 +1565,7 @@ Asset Class: Quarterly Net Deposits/Withdrawals - PF Activity (1 Year)
 #    ${response} =   Post Request    d1g1t_api   /api/v1/calc/pf-activity-group1/      data=${payload_pf_activity}     headers=&{CONTENT_TYPE}
 #
 #    # Check the Response status
-#    Should Be Equal As Strings  ${response.status_code}         200
+#    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 #
 #    # Check the Response body
 #    ${response_body} =  Set Variable  ${response.text}
@@ -1585,7 +1585,7 @@ Asset Class: Quarterly Net Deposits/Withdrawals - PF Activity (1 Year)
 #    ${response} =   Put Request    d1g1t_api        /api/v1/profile/global-settings/PORTFOLIO-MANAGEMENT/      data=${payload_portfolio_management}     headers=&{CONTENT_TYPE}
 #
 #    # Check the Response status
-#    Should Be Equal As Strings  ${response.status_code}         200
+#    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 #
 #    # Check the Response body
 #    ${response_body} =  Set Variable  ${response.json()}
@@ -1605,7 +1605,7 @@ Asset Class: Quarterly Net Deposits/Withdrawals - PF Activity (1 Year)
 #    ${response} =   Post Request    d1g1t_api   /api/v1/calc/pf-activity-group1/      data=${payload_pf_activity}     headers=&{CONTENT_TYPE}
 #
 #    # Check the Response status
-#    Should Be Equal As Strings  ${response.status_code}         200
+#    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 #
 #    # Check the Response body
 #    ${response_body} =  Set Variable  ${response.text}
@@ -1625,7 +1625,7 @@ Asset Class: Quarterly Net Deposits/Withdrawals - PF Activity (1 Year)
 #    ${response} =   Put Request    d1g1t_api        /api/v1/profile/global-settings/PORTFOLIO-MANAGEMENT/      data=${payload_portfolio_management}     headers=&{CONTENT_TYPE}
 #
 #    # Check the Response status
-#    Should Be Equal As Strings  ${response.status_code}         200
+#    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 #
 #    # Check the Response body
 #    ${response_body} =  Set Variable  ${response.json()}
@@ -1645,7 +1645,7 @@ Asset Class: Quarterly Net Deposits/Withdrawals - PF Activity (1 Year)
 #    ${response} =   Post Request    d1g1t_api   /api/v1/calc/pf-activity-group1/      data=${payload_pf_activity}     headers=&{CONTENT_TYPE}
 #
 #    # Check the Response status
-#    Should Be Equal As Strings  ${response.status_code}         200
+#    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 #
 #    # Check the Response body
 #    ${response_body} =  Set Variable  ${response.text}
@@ -1665,7 +1665,7 @@ Asset Class: Quarterly Net Deposits/Withdrawals - PF Activity (1 Year)
 #    ${response} =   Put Request    d1g1t_api        /api/v1/profile/global-settings/PORTFOLIO-MANAGEMENT/      data=${payload_portfolio_management}     headers=&{CONTENT_TYPE}
 #
 #    # Check the Response status
-#    Should Be Equal As Strings  ${response.status_code}         200
+#    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 #
 #    # Check the Response body
 #    ${response_body} =  Set Variable  ${response.json()}
@@ -1685,7 +1685,7 @@ Asset Class: Quarterly Net Deposits/Withdrawals - PF Activity (1 Year)
 #    ${response} =   Post Request    d1g1t_api   /api/v1/calc/pf-activity-group1/      data=${payload_pf_activity}     headers=&{CONTENT_TYPE}
 #
 #    # Check the Response status
-#    Should Be Equal As Strings  ${response.status_code}         200
+#    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 #
 #    # Check the Response body
 #    ${response_body} =  Set Variable  ${response.text}
@@ -1705,7 +1705,7 @@ Asset Class: Quarterly Net Deposits/Withdrawals - PF Activity (1 Year)
 #    ${response} =   Put Request    d1g1t_api        /api/v1/profile/global-settings/PORTFOLIO-MANAGEMENT/      data=${payload_portfolio_management}     headers=&{CONTENT_TYPE}
 #
 #    # Check the Response status
-#    Should Be Equal As Strings  ${response.status_code}         200
+#    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 #
 #    # Check the Response body
 #    ${response_body} =  Set Variable  ${response.json()}
@@ -1725,7 +1725,7 @@ Asset Class: Quarterly Net Deposits/Withdrawals - PF Activity (1 Year)
 #    ${response} =   Post Request    d1g1t_api   /api/v1/calc/pf-activity-group1/      data=${payload_pf_activity}     headers=&{CONTENT_TYPE}
 #
 #    # Check the Response status
-#    Should Be Equal As Strings  ${response.status_code}         200
+#    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 #
 #    # Check the Response body
 #    ${response_body} =  Set Variable  ${response.text}
@@ -1747,7 +1747,7 @@ Asset Class: Quarterly Net Deposits/Withdrawals - PF Activity (1 Year)
 #    ${response} =   Put Request    d1g1t_api        /api/v1/profile/global-settings/PORTFOLIO-MANAGEMENT/      data=${payload_portfolio_management}     headers=&{CONTENT_TYPE}
 #
 #    # Check the Response status
-#    Should Be Equal As Strings  ${response.status_code}         200
+#    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 #
 #    # Check the Response body
 #    ${response_body} =  Set Variable  ${response.json()}
@@ -1766,7 +1766,7 @@ Asset Class: Quarterly Net Deposits/Withdrawals - PF Activity (1 Year)
 #    ${response} =   Post Request    d1g1t_api   /api/v1/calc/pf-activity-group1/      data=${payload_pf_activity}     headers=&{CONTENT_TYPE}
 #
 #    # Check the Response status
-#    Should Be Equal As Strings  ${response.status_code}         200
+#    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 #
 #    # Check the Response body
 #    ${response_body} =  Set Variable  ${response.text}
@@ -1790,7 +1790,7 @@ Currency: Allocation Changes - Portfolio Management (1 Year)
     ${response} =   Put Request    d1g1t_api        /api/v1/profile/global-settings/PORTFOLIO-MANAGEMENT/      data=${payload_portfolio_management}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -1808,7 +1808,7 @@ Currency: Allocation Changes - PF Activity (1 Year)
     ${response} =   Post Request    d1g1t_api   /api/v1/calc/pf-activity-group1/      data=${payload_pf_activity}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -1829,7 +1829,7 @@ Currency: Allocation - Portfolio Management (1 Year)
     ${response} =   Put Request    d1g1t_api        /api/v1/profile/global-settings/PORTFOLIO-MANAGEMENT/      data=${payload_portfolio_management}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -1847,7 +1847,7 @@ Currency: Allocation - PF Activity (1 Year)
     ${response} =   Post Request    d1g1t_api   /api/v1/calc/pf-activity-group1/      data=${payload_pf_activity}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -1871,7 +1871,7 @@ Strategy: Allocation Changes - Portfolio Management (1 Year)
     ${response} =   Put Request    d1g1t_api        /api/v1/profile/global-settings/PORTFOLIO-MANAGEMENT/      data=${payload_portfolio_management}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -1889,7 +1889,7 @@ Strategy: Allocation Changes - PF Activity (1 Year)
     ${response} =   Post Request    d1g1t_api   /api/v1/calc/pf-activity-group1/      data=${payload_pf_activity}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -1910,7 +1910,7 @@ Strategy: Allocation - Portfolio Management (1 Year)
     ${response} =   Put Request    d1g1t_api        /api/v1/profile/global-settings/PORTFOLIO-MANAGEMENT/      data=${payload_portfolio_management}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -1928,7 +1928,7 @@ Strategy: Allocation - PF Activity (1 Year)
     ${response} =   Post Request    d1g1t_api   /api/v1/calc/pf-activity-group1/      data=${payload_pf_activity}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -1949,7 +1949,7 @@ Strategy: Allocation - PF Activity (1 Year)
 #    ${response} =   Put Request    d1g1t_api        /api/v1/profile/global-settings/PORTFOLIO-MANAGEMENT/      data=${payload_portfolio_management}     headers=&{CONTENT_TYPE}
 #
 #    # Check the Response status
-#    Should Be Equal As Strings  ${response.status_code}         200
+#    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 #
 #    # Check the Response body
 #    ${response_body} =  Set Variable  ${response.json()}
@@ -1967,7 +1967,7 @@ Strategy: Allocation - PF Activity (1 Year)
 #    ${response} =   Post Request    d1g1t_api   /api/v1/calc/pf-activity-group1/      data=${payload_pf_activity}     headers=&{CONTENT_TYPE}
 #
 #    # Check the Response status
-#    Should Be Equal As Strings  ${response.status_code}         200
+#    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 #
 #    # Check the Response body
 #    ${response_body} =  Set Variable  ${response.text}
@@ -1988,7 +1988,7 @@ Strategy: Allocation - PF Activity (1 Year)
 #    ${response} =   Put Request    d1g1t_api        /api/v1/profile/global-settings/PORTFOLIO-MANAGEMENT/      data=${payload_portfolio_management}     headers=&{CONTENT_TYPE}
 #
 #    # Check the Response status
-#    Should Be Equal As Strings  ${response.status_code}         200
+#    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 #
 #    # Check the Response body
 #    ${response_body} =  Set Variable  ${response.json()}
@@ -2006,7 +2006,7 @@ Strategy: Allocation - PF Activity (1 Year)
 #    ${response} =   Post Request    d1g1t_api   /api/v1/calc/pf-activity-group1/      data=${payload_pf_activity}     headers=&{CONTENT_TYPE}
 #
 #    # Check the Response status
-#    Should Be Equal As Strings  ${response.status_code}         200
+#    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 #
 #    # Check the Response body
 #    ${response_body} =  Set Variable  ${response.text}
@@ -2027,7 +2027,7 @@ Strategy: Allocation - PF Activity (1 Year)
 #    ${response} =   Put Request    d1g1t_api        /api/v1/profile/global-settings/PORTFOLIO-MANAGEMENT/      data=${payload_portfolio_management}     headers=&{CONTENT_TYPE}
 #
 #    # Check the Response status
-#    Should Be Equal As Strings  ${response.status_code}         200
+#    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 #
 #    # Check the Response body
 #    ${response_body} =  Set Variable  ${response.json()}
@@ -2045,7 +2045,7 @@ Strategy: Allocation - PF Activity (1 Year)
 #    ${response} =   Post Request    d1g1t_api   /api/v1/calc/pf-activity-group1/      data=${payload_pf_activity}     headers=&{CONTENT_TYPE}
 #
 #    # Check the Response status
-#    Should Be Equal As Strings  ${response.status_code}         200
+#    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 #
 #    # Check the Response body
 #    ${response_body} =  Set Variable  ${response.text}
@@ -2069,7 +2069,7 @@ Strategy: Allocation - PF Activity (1 Year)
 #    ${response} =   Put Request    d1g1t_api        /api/v1/profile/global-settings/PORTFOLIO-MANAGEMENT/      data=${payload_portfolio_management}     headers=&{CONTENT_TYPE}
 #
 #    # Check the Response status
-#    Should Be Equal As Strings  ${response.status_code}         200
+#    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 #
 #    # Check the Response body
 #    ${response_body} =  Set Variable  ${response.json()}
@@ -2087,7 +2087,7 @@ Strategy: Allocation - PF Activity (1 Year)
 #    ${response} =   Post Request    d1g1t_api   /api/v1/calc/pf-activity-group1/      data=${payload_pf_activity}     headers=&{CONTENT_TYPE}
 #
 #    # Check the Response status
-#    Should Be Equal As Strings  ${response.status_code}         200
+#    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 #
 #    # Check the Response body
 #    ${response_body} =  Set Variable  ${response.text}
@@ -2108,7 +2108,7 @@ Strategy: Allocation - PF Activity (1 Year)
 #    ${response} =   Put Request    d1g1t_api        /api/v1/profile/global-settings/PORTFOLIO-MANAGEMENT/      data=${payload_portfolio_management}     headers=&{CONTENT_TYPE}
 #
 #    # Check the Response status
-#    Should Be Equal As Strings  ${response.status_code}         200
+#    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 #
 #    # Check the Response body
 #    ${response_body} =  Set Variable  ${response.json()}
@@ -2126,7 +2126,7 @@ Strategy: Allocation - PF Activity (1 Year)
 #    ${response} =   Post Request    d1g1t_api   /api/v1/calc/pf-activity-group1/      data=${payload_pf_activity}     headers=&{CONTENT_TYPE}
 #
 #    # Check the Response status
-#    Should Be Equal As Strings  ${response.status_code}         200
+#    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 #
 #    # Check the Response body
 #    ${response_body} =  Set Variable  ${response.text}
@@ -2147,7 +2147,7 @@ Strategy: Allocation - PF Activity (1 Year)
 #    ${response} =   Put Request    d1g1t_api        /api/v1/profile/global-settings/PORTFOLIO-MANAGEMENT/      data=${payload_portfolio_management}     headers=&{CONTENT_TYPE}
 #
 #    # Check the Response status
-#    Should Be Equal As Strings  ${response.status_code}         200
+#    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 #
 #    # Check the Response body
 #    ${response_body} =  Set Variable  ${response.json()}
@@ -2165,7 +2165,7 @@ Strategy: Allocation - PF Activity (1 Year)
 #    ${response} =   Post Request    d1g1t_api   /api/v1/calc/pf-activity-group1/      data=${payload_pf_activity}     headers=&{CONTENT_TYPE}
 #
 #    # Check the Response status
-#    Should Be Equal As Strings  ${response.status_code}         200
+#    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 #
 #    # Check the Response body
 #    ${response_body} =  Set Variable  ${response.text}

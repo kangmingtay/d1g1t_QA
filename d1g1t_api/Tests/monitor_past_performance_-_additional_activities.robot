@@ -5,6 +5,7 @@ Documentation  Testing API calls in Monitor page.
 Resource  ../Resources/MonitorOverview/initial_api.robot
 Resource  ../Resources/MonitorPastPerformance/trend_analysis_api.robot
 Resource  ../Resources/MonitorPastPerformance/performance_analysis_api.robot
+Resource  ../Resources/MonitorPastPerformance/contribution_analysis_api.robot
 
 Suite Teardown  Delete All Sessions
 
@@ -23,7 +24,6 @@ New Session
     [Tags]  login
 
     Verify User Login
-
 
 
 # API calls for Trend Analysis Chart
@@ -211,7 +211,219 @@ Check Performance for Security
     Security - Bottom Performers (Since Inception)
 
 
+# APi calls for Contribution analysis:
 
+Check Contribution for Strategy
+
+    [Documentation]  Checking Strategy API calls for Contribution analysis
+    [Tags]  past_performance    contribution_analysis
+
+    Strategy - Total Return: Contribution
+    Strategy - Total Return: Contribution (3 Years)
+    Strategy - Total Return: Contribution (5 Years)
+    Strategy - Total Return: Contribution (Year-to-Date)
+    Strategy - Total Return: Contribution (Since Inception)
+
+    Strategy - Trailing Returns: Contribution
+
+    Strategy - Return By Period: Contribution
+    Strategy - Return By Period: Contribution (3 Years)
+    Strategy - Return By Period: Contribution (5 Years)
+    Strategy - Return By Period: Contribution (Year-to-Date)
+    Strategy - Return By Period: Contribution (Since Inception)
+    Strategy - Quarterly Return By Period: Contribution
+
+Check Contribution - Drilldown for Strategy
+
+    [Documentation]  Checking Strategy API calls for Contribution - Drilldown
+    [Tags]  past_performance    contribution_drilldown
+
+    Strategy - Total Return: Contribution - Drilldown
+    Strategy - Total Return: Contribution - Drilldown (3 Years)
+    Strategy - Total Return: Contribution - Drilldown (5 Years)
+    Strategy - Total Return: Contribution - Drilldown (Year-to-Date)
+    Strategy - Total Return: Contribution - Drilldown (Since Inception)
+
+    Strategy - Trailing Returns: Contribution - Drilldown
+
+    Strategy - Return By Period: Contribution - Drilldown
+    Strategy - Return By Period: Contribution - Drilldown (3 Years)
+    Strategy - Return By Period: Contribution - Drilldown (5 Years)
+    Strategy - Return By Period: Contribution - Drilldown (Year-to-Date)
+    Strategy - Return By Period: Contribution - Drilldown (Since Inception)
+    Strategy - Quarterly Return By Period: Contribution - Drilldown
+
+Check Client Position List for Strategy
+
+    [Documentation]  Checking Strategy API calls for Client Position List
+    [Tags]  past_performance    client_position_list
+
+    Strategy - Total Return: Client Position List
+    Strategy - Total Return: Client Position List (3 Years)
+    Strategy - Total Return: Client Position List (5 Years)
+    Strategy - Total Return: Client Position List (Year-to-Date)
+    Strategy - Total Return: Client Position List (Since Inception)
+
+    Strategy - Trailing Returns: Client Position List
+
+    Strategy - Return By Period: Client Position List
+    Strategy - Return By Period: Client Position List (3 Years)
+    Strategy - Return By Period: Client Position List (5 Years)
+    Strategy - Return By Period: Client Position List (Year-to-Date)
+    Strategy - Return By Period: Client Position List (Since Inception)
+    Strategy - Quarterly Return By Period: Client Position List
+
+Check Infographic Monitor for Strategy
+
+    [Documentation]  Checking Strategy API calls for Infographic Monitor
+    [Tags]  past_performance    infographic_monitor
+
+    Strategy - Total Return: Infographic Monitor
+    Strategy - Total Return: Infographic Monitor (3 Years)
+    Strategy - Total Return: Infographic Monitor (5 Years)
+    Strategy - Total Return: Infographic Monitor (Year-to-Date)
+    Strategy - Total Return: Infographic Monitor (Since Inception)
+
+    Strategy - Trailing Returns: Infographic Monitor
+
+    Strategy - Return By Period: Infographic Monitor
+    Strategy - Return By Period: Infographic Monitor (3 Years)
+    Strategy - Return By Period: Infographic Monitor (5 Years)
+    Strategy - Return By Period: Infographic Monitor (Year-to-Date)
+    Strategy - Return By Period: Infographic Monitor (Since Inception)
+    Strategy - Quarterly Return By Period: Infographic Monitor
+
+Check Contribution for Asset Class
+
+    [Documentation]  Checking Asset Class API calls for Contribution analysis
+    [Tags]  past_performance    contribution_analysis
+
+    Asset Class - Total Return: Contribution
+
+    Asset Class - Trailing Returns: Contribution
+
+    Asset Class - Return By Period: Contribution
+
+Check Contribution - Drilldown for Asset Class
+
+    [Documentation]  Checking Asset Class API calls for Contribution - Drilldown
+    [Tags]  past_performance    contribution_drilldown
+
+    Asset Class - Total Return: Contribution - Drilldown
+
+    Asset Class - Trailing Returns: Contribution - Drilldown
+
+    Asset Class - Return By Period: Contribution - Drilldown
+
+Check Client Position List for Asset Class
+
+    [Documentation]  Checking Asset Class API calls for Client Position List
+    [Tags]  past_performance    client_position_list
+
+    Asset Class - Total Return: Client Position List
+
+    Asset Class - Trailing Returns: Client Position List
+
+    Asset Class - Return By Period: Client Position List
+
+Check Infographic Monitor for Asset Class
+
+    [Documentation]  Checking Asset Class API calls for Infographic Monitor
+    [Tags]  past_performance    infographic_monitor
+
+    Asset Class - Total Return: Infographic Monitor
+
+    Asset Class - Trailing Returns: Infographic Monitor
+
+    Asset Class - Return By Period: Infographic Monitor
+
+Check Contribution for Currency
+
+    [Documentation]  Checking Currency API calls for Contribution analysis
+    [Tags]  past_performance    contribution_analysis
+
+    Currency - Total Return: Contribution
+
+    Currency - Trailing Returns: Contribution
+
+    Currency - Return By Period: Contribution
+
+Check Contribution - Drilldown for Currency
+
+    [Documentation]  Checking Currency API calls for Contribution - Drilldown
+    [Tags]  past_performance    contribution_drilldown
+
+    Currency - Total Return: Contribution - Drilldown
+
+    Currency - Trailing Returns: Contribution - Drilldown
+
+    Currency - Return By Period: Contribution - Drilldown
+
+Check Client Position List for Currency
+
+    [Documentation]  Checking Currency API calls for Client Position List
+    [Tags]  past_performance    client_position_list
+
+    Currency - Total Return: Client Position List
+
+    Currency - Trailing Returns: Client Position List
+
+    Currency - Return By Period: Client Position List
+
+Check Infographic Monitor for Currency
+
+    [Documentation]  Checking Currency API calls for Infographic Monitor
+    [Tags]  past_performance    infographic_monitor
+
+    Currency - Total Return: Infographic Monitor
+
+    Currency - Trailing Returns: Infographic Monitor
+
+    Currency - Return By Period: Infographic Monitor
+
+Check Contribution for Security
+
+    [Documentation]  Checking Security API calls for Contribution analysis
+    [Tags]  past_performance    contribution_analysis
+
+    Security - Total Return: Contribution
+
+    Security - Trailing Returns: Contribution
+
+    Security - Return By Period: Contribution
+
+Check Contribution - Drilldown for Security
+
+    [Documentation]  Checking Security API calls for Contribution - Drilldown
+    [Tags]  past_performance    contribution_drilldown
+
+    Security - Total Return: Contribution - Drilldown
+
+    Security - Trailing Returns: Contribution - Drilldown
+
+    Security - Return By Period: Contribution - Drilldown
+
+Check Client Position List for Security
+
+    [Documentation]  Checking Security API calls for Client Position List
+    [Tags]  past_performance    client_position_list
+
+    Security - Total Return: Client Position List
+
+    Security - Trailing Returns: Client Position List
+
+    Security - Return By Period: Client Position List
+
+Check Infographic Monitor for Security
+
+    [Documentation]  Checking Security API calls for Infographic Monitor
+    [Tags]  past_performance    infographic_monitor
+
+    Security - Total Return: Infographic Monitor
+
+    Security - Trailing Returns: Infographic Monitor
+
+    Security - Return By Period: Infographic Monitor
 
 
 

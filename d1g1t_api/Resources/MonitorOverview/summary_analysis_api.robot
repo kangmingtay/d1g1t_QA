@@ -26,7 +26,7 @@ One Month - Summary Statistics
     ${response} =   Put Request     d1g1t_api        /api/v1/profile/global-settings/SUMMARY-STATISTICS-MONITOR-OVERVIEW/      data=${payload_summary_statistics}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -44,7 +44,7 @@ One Month - Summary
     ${response} =   Post Request    d1g1t_api        /api/v1/calc/summary/      data=${payload_summary}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -65,7 +65,7 @@ One Month - Summary
     ${response} =   Put Request     d1g1t_api        /api/v1/profile/global-settings/SUMMARY-STATISTICS-MONITOR-OVERVIEW/      data=${payload_summary_statistics}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -83,7 +83,7 @@ One Month - Summary
     ${response} =   Post Request    d1g1t_api        /api/v1/calc/summary/      data=${payload_summary}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -104,7 +104,7 @@ One Month - Summary
     ${response} =   Put Request     d1g1t_api        /api/v1/profile/global-settings/SUMMARY-STATISTICS-MONITOR-OVERVIEW/      data=${payload_summary_statistics}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -122,7 +122,7 @@ One Month - Summary
     ${response} =   Post Request    d1g1t_api        /api/v1/calc/summary/      data=${payload_summary}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -143,7 +143,7 @@ Year to Date - Summary Statistics
     ${response} =   Put Request     d1g1t_api        /api/v1/profile/global-settings/SUMMARY-STATISTICS-MONITOR-OVERVIEW/      data=${payload_summary_statistics}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -161,7 +161,7 @@ Year to Date - Summary
     ${response} =   Post Request    d1g1t_api        /api/v1/calc/summary/      data=${payload_summary}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -180,7 +180,7 @@ Year to Date - Summary
     ${response} =   Put Request     d1g1t_api        /api/v1/profile/global-settings/SUMMARY-STATISTICS-MONITOR-OVERVIEW/      data=${payload_summary_statistics}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -196,7 +196,7 @@ Year to Date - Summary
     ${response} =   Post Request    d1g1t_api        /api/v1/calc/summary/      data=${payload_summary}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -217,7 +217,7 @@ Year to Date - Summary
     ${response} =   Put Request     d1g1t_api        /api/v1/profile/global-settings/SUMMARY-STATISTICS-MONITOR-OVERVIEW/      data=${payload_summary_statistics}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -235,7 +235,7 @@ Year to Date - Summary
     ${response} =   Post Request    d1g1t_api        /api/v1/calc/summary/      data=${payload_summary}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -256,7 +256,7 @@ Year to Date - Summary
     ${response} =   Put Request     d1g1t_api        /api/v1/profile/global-settings/SUMMARY-STATISTICS-MONITOR-OVERVIEW/      data=${payload_summary_statistics}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -274,7 +274,7 @@ Year to Date - Summary
     ${response} =   Post Request    d1g1t_api        /api/v1/calc/summary/      data=${payload_summary}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -295,7 +295,7 @@ Since Inception - Summary Statistics
     ${response} =   Put Request     d1g1t_api        /api/v1/profile/global-settings/SUMMARY-STATISTICS-MONITOR-OVERVIEW/      data=${payload_summary_statistics}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -313,7 +313,7 @@ Since Inception - Summary
     ${response} =   Post Request    d1g1t_api        /api/v1/calc/summary/      data=${payload_summary}     headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}

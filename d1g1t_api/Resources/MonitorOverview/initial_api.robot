@@ -47,7 +47,7 @@ Verify User Login
     ${response} =   Post Request    d1g1t_api                   /api/v1/auth/login/     data=${PAYLOAD_LOGIN_CREDENTIALS}    headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -61,7 +61,7 @@ System Status
     ${response} =   Get Request    d1g1t_api                    /api/v1/system-status/
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -75,7 +75,7 @@ Global Filter
     ${response} =   Get Request    d1g1t_api                    /api/v1/profile/global-filter/
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -89,7 +89,7 @@ Global Selected Filter
     ${response} =   Get Request    d1g1t_api                    /api/v1/profile/global-settings/global-selected-filter/
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
 Current Firm Configuration
 
@@ -99,7 +99,7 @@ Current Firm Configuration
     ${response} =   Get Request    d1g1t_api                    /api/v1/people/firm-configuration/current/
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -115,13 +115,13 @@ Current User
     ${response} =   Get Request    d1g1t_api                    /api/v1/auth/me/
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
     Dictionary Should Contain Value  ${response_body}  ${USER_NAME}
 
-    ${user_profile_path} =  fetch from right  ${response_body['profile']}  com
+    ${user_profile_path} =  Fetch From Right  ${response_body['profile']}  com
     Set Global Variable  ${USER_PROFILE_PATH}
 
     ${current_user} =  Set Variable  ${response_body['first_name']}  ${response_body['last_name']}
@@ -135,7 +135,7 @@ Current User Profile
     ${response} =   Get Request    d1g1t_api                    ${USER_PROFILE_PATH}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -153,7 +153,7 @@ Ticker Price
     ${response} =   Post Request    d1g1t_api                   /api/v1/market/tickers/tickersprice/     data=${payload_tickers_price}    headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -167,7 +167,7 @@ Grouping Criteria
     ${response} =   Get Request    d1g1t_api                    /api/v1/grouping-criteria/
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -181,7 +181,7 @@ Monitor Overview: Trend Analysis Chart
     ${response} =   Get Request    d1g1t_api                    /api/v1/profile/global-settings/CHART-TREND-ANALYSIS-MONITOR-OVERVIEW/
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -195,7 +195,7 @@ Monitor Overview: Summary Statistics
     ${response} =   Get Request    d1g1t_api                    /api/v1/profile/global-settings/SUMMARY-STATISTICS-MONITOR-OVERVIEW/
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -209,7 +209,7 @@ Monitor Overview: Light Cone Analysis
     ${response} =   Get Request    d1g1t_api                    /api/v1/profile/global-settings/LIGHT-CONE-ANALYTICS-MONITOR-OVERVIEW/
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
 Monitor Overview: Portfolio Activity
 
@@ -219,7 +219,7 @@ Monitor Overview: Portfolio Activity
     ${response} =   Get Request    d1g1t_api                    /api/v1/profile/global-settings/portfolio-activity:monitor-overview/
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
 Monitor Overview - Selected View: Light Cone Analysis
 
@@ -229,7 +229,7 @@ Monitor Overview - Selected View: Light Cone Analysis
     ${response} =   Get Request    d1g1t_api                    /api/v1/profile/global-settings/LIGHT-CONE-ANALYTICS-MONITOR-OVERVIEW-selectedView/
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
 Global Settings
 
@@ -239,7 +239,7 @@ Global Settings
     ${response} =   Get Request    d1g1t_api                    /api/v1/profile/global-settings/
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -253,7 +253,7 @@ Global Settings: Portfolio Management
     ${response} =   Get Request    d1g1t_api                    /api/v1/profile/global-settings/PORTFOLIO-MANAGEMENT/
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -270,7 +270,7 @@ Calculation: Summary
     ${response} =   Post Request    d1g1t_api                   /api/v1/calc/summary/     data=${payload_summary}    headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -287,7 +287,7 @@ Calculation: Summary USD
     ${response} =   Post Request    d1g1t_api                   /api/v1/calc/summary/     data=${payload_summary_usd}    headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -304,7 +304,7 @@ Calculation: Cumulative Return Trend
     ${response} =   Post Request    d1g1t_api                   /api/v1/calc/trend-cumul-ret/     data=${payload_cumulative_return}    headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -321,7 +321,7 @@ Calculation: Cumulative Return Trend USD
     ${response} =   Post Request    d1g1t_api                   /api/v1/calc/trend-cumul-ret/     data=${payload_cumulative_return_usd}    headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -338,7 +338,7 @@ Calculation: PF Deposits
     ${response} =   Post Request    d1g1t_api                   /api/v1/calc/pf-deposits/     data=${payload_pf_deposits}    headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -355,7 +355,7 @@ Calculation: PF Deposits USD
     ${response} =   Post Request    d1g1t_api                   /api/v1/calc/pf-deposits/     data=${payload_pf_deposits_usd}    headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -372,7 +372,7 @@ Calculation: PF Activity
     ${response} =   Post Request    d1g1t_api                   /api/v1/calc/pf-activity-group1/     data=${payload_pf_activity}    headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -389,7 +389,7 @@ Calculation: PF Activity USD
     ${response} =   Post Request    d1g1t_api                   /api/v1/calc/pf-activity-group1/     data=${payload_pf_activity_usd}    headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -406,7 +406,7 @@ Calculation: Trend
     ${response} =   Post Request    d1g1t_api                   /api/v1/calc/trend-aum/     data=${payload_trend}    headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -423,7 +423,7 @@ Calculation: Trend USD
     ${response} =   Post Request    d1g1t_api                   /api/v1/calc/trend-aum/     data=${payload_trend_usd}    headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.text}
@@ -437,7 +437,7 @@ Views: Light Cone Analysis
     ${response} =   Get Request    d1g1t_api                    api/v1/profile/views/?table_key=LIGHT-CONE-ANALYTICS-MONITOR-OVERVIEW
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -455,7 +455,7 @@ Manage Global Filters
     ${response} =   Get Request    d1g1t_api                    /api/v1/static/filter-criteria/?is_global=1
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
@@ -471,13 +471,14 @@ Add a Global Filter
     ${response} =   Post Request    d1g1t_api                   /api/v1/profile/global-filter/     data=${add_global_filter}    headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
     Dictionary Should Contain Key  ${response_body}             items
 
 Remove Global Filter
+
     [Documentation]     Removing global filters
 
     ${remove_global_filter} =  Set Variable                     {"type":"global-filter","items":[]}
@@ -486,7 +487,7 @@ Remove Global Filter
     ${response} =   Post Request    d1g1t_api                    /api/v1/profile/global-filter/     data=${remove_global_filter}    headers=&{CONTENT_TYPE}
 
     # Check the Response status
-    Should Be Equal As Strings  ${response.status_code}         200
+    Run Keyword If   ${response.status_code}==202   Wait Until Keyword Succeeds   5x   10sec   Should Be Equal As Strings   ${response.status_code}   200   ELSE   Should Be Equal As Strings   ${response.status_code}   200
 
     # Check the Response body
     ${response_body} =  Set Variable  ${response.json()}
