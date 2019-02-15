@@ -1,6 +1,6 @@
 *** Settings ***
 
-Documentation  Testing API calls in Monitor page.
+Documentation  Testing API calls in Monitor page 'Past Performance' tab.
 
 Resource  ../Resources/MonitorOverview/initial_api.robot
 Resource  ../Resources/MonitorPastPerformance/initial_api.robot
